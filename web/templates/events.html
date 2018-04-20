@@ -1,0 +1,14 @@
+{% for event in eventList %}
+  <a href="/events/{{event.id}}/{{event.event_title|slugify}}">{{ event.event_title }}</a>
+  <br>
+{% endfor %}
+<h1>Upcoming Events</h1>
+{% for event in futureEvents %}
+  <a href="/events/{{event.id}}/{{event.event_title|slugify}}">{{ event.event_title }}</a>
+  <br>
+{% endfor %}
+<h1>Past Events</h1>
+{% for event in pastEvents %}
+  <a href="/events/{{event.id}}/{{event.event_title|slugify}}">{{ event.event_title }}</a>
+  <br>
+{% endfor %}
