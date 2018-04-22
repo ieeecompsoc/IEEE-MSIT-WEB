@@ -1,0 +1,24 @@
+{% for member in allMembers %}
+  <br>
+  Name - {{ member.name }}
+  <br>
+  Chapter - {{ member.chapter }}
+  <br>
+  Designation - {{ member.designation }}
+  <br>
+{% endfor %}
+
+<h1>CS Members</h1>
+{% for member in csMembers %}
+  <br>
+  Name - {{ member.name }}
+  <br>
+  Chapter - {{ member.chapter }}
+  <br>
+  Designation - {{ member.designation }}
+  {% if member.image %}
+    <br>
+    <img src="{{ member.image.url }}">
+  {% endif %}
+  <br>
+{% endfor %}

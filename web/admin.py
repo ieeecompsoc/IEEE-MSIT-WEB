@@ -2,7 +2,25 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import Event
+from django.utils.html import format_html
+from .models import Event,Chapter,Designation,Execom
+
+class EventAdmin(admin.ModelAdmin):
+    list_display=('event_title','create_date','image')
+    list_filter=['create_date']
+
+class ExecomAdmin(admin.ModelAdmin):
+    def image_tag(self, obj):
+        try:
+            return format_html('<img src="{}" height="50" width="auto" />'.format(obj.image.url))
+        except:
+            return None;
+    image_tag.short_description = 'Image'
+    list_display=('name','image_tag','chapter','designation')
+    list_filter=['chapter']
 
 # Register your models here.
-admin.site.register(Event)
+admin.site.register(Event, EventAdmin)
+admin.site.register(Execom,ExecomAdmin)
+admin.site.register(Chapter)
+admin.site.register(Designation)

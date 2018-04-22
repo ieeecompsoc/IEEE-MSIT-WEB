@@ -3,3 +3,7 @@
 {{ eventData.event_description }}
 <br>
 {{ eventData.create_date }}
+{% if eventData.image %}
+  <br>
+  <img src="{{ eventData.image.url }}">
+{% endif %}

@@ -7,4 +7,5 @@ urlpatterns = [
     path(r'aboutIEEE', views.aboutIEEE, name='aboutIEEE'),
     path(r'events', views.events, name='events'),
     path(r'events/<int:event_id>/<slug:slug>', views.specificEvent, name='specificEvent'),
+    path(r'execom', views.execom, name='execom'),
 ]
