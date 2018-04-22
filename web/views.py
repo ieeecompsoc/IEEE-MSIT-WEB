@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Event,Execom,Chapter,Designation
+from .models import Event,Execom,Chapter,Designation,Achievment,Sig
 
 def index(request):
     context = {}
@@ -39,3 +39,13 @@ def execom(request):
     wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE")
     context = {'allMembers':allMembers,'csMembers':csMembers,'mttsMembers':mttsMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers}
     return render(request, 'execom.html', context)
+
+def achievment(request):
+    achievments = Achievment.objects.all()
+    context = {'achievments':achievments}
+    return render(request, 'achievment.html',context)
+
+def sig(request):
+    sig = Sig.objects.filter(pk=1)
+    context={'sig':sig}
+    return render(request,'sig.html',context)

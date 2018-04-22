@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
@@ -37,3 +39,16 @@ class Execom(models.Model):
 
     def __str__(self):
         return "%s" % (self.name)
+
+class Achievment(models.Model):
+    achievment = models.CharField(max_length=300)
+    achievment_date = models.DateTimeField(verbose_name = 'Achievment Date', default = timezone.now)
+
+    def __str__(self):
+        return "%s"  % (self.achievment)
+
+class Sig(models.Model):
+    sigContent = RichTextUploadingField(verbose_name='Page Content')
+
+    def __str__(self):
+        return "%s" % (self.sigContent)

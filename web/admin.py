@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Event,Chapter,Designation,Execom
+from .models import Event,Chapter,Designation,Execom,Achievment,Sig
 
 class EventAdmin(admin.ModelAdmin):
     list_display=('event_title','create_date','image')
@@ -19,8 +19,13 @@ class ExecomAdmin(admin.ModelAdmin):
     list_display=('name','image_tag','chapter','designation')
     list_filter=['chapter']
 
+class AchievmentAdmin(admin.ModelAdmin):
+    list_display=('achievment', 'achievment_date')
+
 # Register your models here.
 admin.site.register(Event, EventAdmin)
 admin.site.register(Execom,ExecomAdmin)
 admin.site.register(Chapter)
 admin.site.register(Designation)
+admin.site.register(Achievment)
+admin.site.register(Sig)

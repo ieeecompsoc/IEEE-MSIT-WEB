@@ -7,5 +7,7 @@ urlpatterns = [
     path(r'aboutIEEE', views.aboutIEEE, name='aboutIEEE'),
     path(r'events', views.events, name='events'),
     path(r'events/<int:event_id>/<slug:slug>', views.specificEvent, name='specificEvent'),
-    path(r'execom', views.execom, name='execom'),
+    path(r'ExCom', views.execom, name='execom'),
+    path(r'achievments', views.achievment, name='achievment'),
+    path(r'sig', views.sig, name='sig'),
 ]
