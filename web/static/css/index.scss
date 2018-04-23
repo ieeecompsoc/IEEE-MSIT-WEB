@@ -1,3 +1,32 @@
-p {
-  color: red;
+/* CSS for index.html */
+/* Use prefix index- */
+#index {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden !important;
+  color: white;
+
+  .index-carousel {
+    max-height: 75%;
+    overflow: hidden;
+    img {
+      height: 35em;
+      max-width: 100%;
+      object-fit: fill;
+      object-position: center;
+    }
+  }
+
+  .index-chapters {
+    margin: auto;
+    text-align: center;
+    img {
+      height: 10em;
+      width: 10em;
+    }
+  }
+
 }
+/* CSS for index.html ends */
