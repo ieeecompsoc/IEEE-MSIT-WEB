@@ -270,6 +270,40 @@
 }
 
 /* CSS for events.html ends */
+
 /* CSS for specificEvent.html begins */
+/* Use prefix specific-* */
+
+.specific-wrapper {
+  .specific-image {
+    text-align: center;
+    img {
+      height: auto;
+      width: 30em;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .specific-title {
+    h1 {
+      margin-top: 1em;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-decoration-color: $ieee-blue;
+    }
+  }
+  .specific-date {
+    h4 {
+      text-align: center;
+
+    }
+  }
+  .specific-description {
+    text-align: justify;
+    font-size: 0.9em;
+  }
+}
 
 /* CSS for specificEvent.html ends*/

@@ -7,16 +7,29 @@
   {{ eventData.event_title }}
 {% endblock %}
 {% block index %}
-<div class="container">
-  {{ eventData.event_title }}
-  <br>
-  {{ eventData.event_description }}
-  <br>
-  {{ eventData.create_date }}
-  {% if eventData.image %}
-    <br>
-    <img src="{{ eventData.image.url }}">
-  {% endif %}
+<div class="container specific-wrapper">
+  <div class="row specific-image align-items-center">
+    <div class="col">
+      {% if eventData.image %}
+        <img src="{{ eventData.image.url }}">
+      {% endif %}
+    </div>
+  </div>
+  <div class="row specific-title">
+    <div class="col">
+      <h1>{{ eventData.event_title }}</h1>
+    </div>
+  </div>
+  <div class="row specific-date">
+    <div class="col">
+      <h4>{{ eventData.event_date|date:"d N Y" }}</h4>
+    </div>
+  </div>
+  <div class="row specific-description">
+    <div class="col">
+      {{ eventData.event_description }}
+    </div>
+  </div>
 </div>
 {% endblock %}
 {% block footer %}
