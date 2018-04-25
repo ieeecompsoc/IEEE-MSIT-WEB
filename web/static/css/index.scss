@@ -307,3 +307,35 @@
 }
 
 /* CSS for specificEvent.html ends*/
+
+/* CSS for excom.html begins */
+/* Use prefix excom-* */
+.excom-wrapper {
+  .excom-chapter {
+    margin: 1em auto;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: $ieee-blue;
+  }
+  .excom-teams {
+    .excom-card {
+      text-align: center;
+      margin: auto;
+    }
+    img {
+      width: 10em;
+      height: 10em;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      margin: auto;
+    }
+    a {
+      color: $ieee-blue;
+      &:focus,&:hover,&:active {
+        color: $ieee-blue;
+      }
+    }
+  }
+}
+/* CSS for excom ends */

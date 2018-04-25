@@ -1,7 +1,8 @@
 $(document).ready(function(){
-  $('.index-slick-news').slick({
-    slidesToShow: 1,
+  $('.excom-teams').slick({
+    slidesToShow: 3,
     slidesToScroll: 1,
+    infinite: true,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
