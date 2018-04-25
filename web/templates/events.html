@@ -1,14 +1,103 @@
-{% for event in eventList %}
-  <a href="/events/{{event.id}}/{{event.event_title|slugify}}">{{ event.event_title }}</a>
-  <br>
-{% endfor %}
-<h1>Upcoming Events</h1>
-{% for event in futureEvents %}
-  <a href="/events/{{event.id}}/{{event.event_title|slugify}}">{{ event.event_title }}</a>
-  <br>
-{% endfor %}
-<h1>Past Events</h1>
-{% for event in pastEvents %}
-  <a href="/events/{{event.id}}/{{event.event_title|slugify}}">{{ event.event_title }}</a>
-  <br>
-{% endfor %}
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}
+  {% include "navbar.html"%}
+{% endblock %}
+{% block title %}
+  Events@IEEE MSIT
+{% endblock %}
+{% block index %}
+<div class="container events-container">
+  {% if eventList %}
+  {% if futureEvents %}
+  <div class="events-future">
+    <div class="row">
+      <div class="col events-category">
+        <h2>Upcoming Events</h2>
+      </div>
+    </div>
+    {% for event in futureEvents %}
+      <div class="row events-card">
+        <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
+          <img src="{{event.image.url}}">
+        </div>
+        <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
+          <div class="row events-title-date">
+            <div class="col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
+              <h5>
+                {{ event.event_title|capfirst }}
+              </h5>
+            </div>
+            <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+              <h5>
+                {{ event.event_date|date:"d N Y" }}
+              </h5>
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-description">
+              {{event.event_description|truncatewords:60|capfirst}}
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-readmore">
+              <a type="button" class="btn btn-primary" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if pastEvents %}
+  <div class="events-past">
+    <div class="row">
+      <div class="col events-category">
+        <h2>Past Events</h2>
+      </div>
+    </div>
+    {% for event in pastEvents %}
+      <div class="row events-card">
+        <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
+          <img src="{{event.image.url}}">
+        </div>
+        <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
+          <div class="row events-title-date">
+            <div class="col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
+              <h5>
+                {{ event.event_title|capfirst }}
+              </h5>
+            </div>
+            <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+              <h5>
+                {{ event.event_date|date:"d N Y" }}
+              </h5>
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-description">
+              {{event.event_description|truncatechars:300|capfirst}}
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-readmore">
+              <a type="button" class="btn btn-primary" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% else %}
+    <h1>There are currently no events. Please check again later. We are preparing something resourceful for you</h1>
+  {% endif %}
+</div>
+{% endblock %}
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock %}

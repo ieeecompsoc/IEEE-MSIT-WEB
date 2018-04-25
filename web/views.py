@@ -19,9 +19,9 @@ def aboutIEEE(request):
     return render(request, 'aboutIEEE.html', context)
 
 def events(request):
-    eventList = Event.objects.order_by('-create_date')
-    futureEvents = Event.objects.filter(create_date__gte=timezone.now())
-    pastEvents = Event.objects.filter(create_date__lt=timezone.now())
+    eventList = Event.objects.order_by('-event_date')
+    futureEvents = Event.objects.filter(event_date__gte=timezone.now())
+    pastEvents = Event.objects.filter(event_date__lt=timezone.now())
     context = {'eventList': eventList, 'futureEvents': futureEvents, 'pastEvents' : pastEvents}
     return render(request, 'events.html', context)
 

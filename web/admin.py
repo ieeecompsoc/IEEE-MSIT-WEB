@@ -6,8 +6,8 @@ from django.utils.html import format_html
 from .models import Event,Chapter,Designation,Execom,Achievment,Sig, Update
 
 class EventAdmin(admin.ModelAdmin):
-    list_display=('event_title','create_date','image')
-    list_filter=['create_date']
+    list_display=('event_title','event_date','image')
+    list_filter=['event_date']
 
 class ExecomAdmin(admin.ModelAdmin):
     def image_tag(self, obj):

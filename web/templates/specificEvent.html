@@ -1,9 +1,24 @@
-{{ eventData.event_title }}
-<br>
-{{ eventData.event_description }}
-<br>
-{{ eventData.create_date }}
-{% if eventData.image %}
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}
+  {% include "navbar.html"%}
+{% endblock %}
+{% block title %}
+  {{ eventData.event_title }}
+{% endblock %}
+{% block index %}
+<div class="container">
+  {{ eventData.event_title }}
   <br>
-  <img src="{{ eventData.image.url }}">
-{% endif %}
+  {{ eventData.event_description }}
+  <br>
+  {{ eventData.create_date }}
+  {% if eventData.image %}
+    <br>
+    <img src="{{ eventData.image.url }}">
+  {% endif %}
+</div>
+{% endblock %}
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock %}
