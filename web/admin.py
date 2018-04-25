@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Event,Chapter,Designation,Execom,Achievment,Sig
+from .models import Event,Chapter,Designation,Execom,Achievment,Sig, Update
 
 class EventAdmin(admin.ModelAdmin):
     list_display=('event_title','create_date','image')
@@ -29,3 +29,4 @@ admin.site.register(Chapter)
 admin.site.register(Designation)
 admin.site.register(Achievment)
 admin.site.register(Sig)
+admin.site.register(Update)

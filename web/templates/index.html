@@ -1,28 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
+{% block navbar %}
+  {% include "navbar.html"%}
+{% endblock %}
 {% block title %}
   IEEE MSIT
 {% endblock %}
 {% block index %}
-<div id="index" class="container">
-  <div class="row index-chapters">
-    <div class="col">
-      <img src="{% static 'images/ieee msit cs.png' %}">
-      Computer Chapter
-    </div>
-    <div class="col">
-      <img src="{% static 'images/MTTS_Color.png' %}">
-    </div>
-    <div class="col">
-      <img src="{% static 'images/PES_MSIT_Colr.png' %}">
-    </div>
-    <div class="col">
-      <img src="{% static 'images/wie_transparent.png' %}">
-    </div>
-  </div>
+<div id="index" class="container-fluid">
   <div class="row index-carousel">
-    <div class="col-10">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="col">
+      <div id="main-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+        <ol class="carousel-indicators">
+          <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#main-carousel" data-slide-to="1"></li>
+          <li data-target="#main-carousel" data-slide-to="2"></li>
+        </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="{% static 'images/team.jpeg' %}">
@@ -34,5 +27,61 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row index-mission justify-content-center">
+      <div class="col-10">
+        <h1>Message From The Branch</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+    <div class="row index-chapters">
+      <div class="col-10">
+        <div class="row">
+          <h1>Our Chapters</h1>
+        </div>
+        <div class="row index-chapter-images">
+          <div class="col">
+            <img src="{% static 'images/ieee msit cs.png' %}">
+          </div>
+          <div class="col">
+            <img src="{% static 'images/MTTS_Color.png' %}">
+          </div>
+          <div class="col">
+            <img src="{% static 'images/PES_MSIT_Colr.png' %}">
+          </div>
+          <div class="col">
+            <img src="{% static 'images/wie_transparent.png' %}">
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if allNews %}
+    <div class="row index-news">
+      <div class="col">
+        <div class="row">
+          <h1>Latest News</h1>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <div class="index-slick-news">
+              {% for news in allNews %}
+                <h4>
+                  {{news.content}}
+                </h4>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
 </div>
+{% endblock %}
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock %}
+{% block pageJS %}
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock %}

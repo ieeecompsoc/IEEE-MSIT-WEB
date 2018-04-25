@@ -1,3 +1,140 @@
-/* CSS for index.html */
+/* Variables */
 
+  $ieee-blue: #006790;
+  $sectionMarginTop: 2em;
+
+/* End of Variables */
+
+/* Mixins */
+
+@mixin headingDash {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1em;
+  &::after {
+    content: "";
+    width: 2em;
+    color: $ieee-blue;
+    position: relative;
+    bottom: 0;
+    display: block;
+    border-bottom: 3px solid;
+    margin: auto;
+  }
+}
+
+/* End of Mixins */
+
+/* CSS for navbar.html */
+/* Use prefix navnav- */
+
+.navnav-container {
+  .navnav-ieee {
+    font-size: 0.8em;
+    background-color: $ieee-blue;
+    color: white;
+    .col {
+      .navnav-right {
+        float: right;
+      }
+      padding-top: 15px;
+      padding-bottom: 15px;
+      a {
+        color: white;
+        padding: 0 10px;
+        &:visited, &:hover, &:active {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .navbar {
+    #navnav-main {
+      ul {
+        margin: 0 auto;
+        li {
+          margin: auto 1em;
+          a {
+            color: #333;
+            svg {
+              margin-right: 0.4em;
+            }
+          }
+        }
+      }
+      .navbar-brand {
+        margin: auto 3em;
+        img {
+          height: 4em;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+/* End of navbar.html */
+
+/* CSS for index.html */
+/* Use prefix index- */
+#index {
+  max-width: 100%;
+  .index-carousel {
+    margin-top: 1em;
+    .col {
+      margin: 0 auto;
+      img {
+        border: 6px solid $ieee-blue;
+        height: 40em;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  .index-mission {
+    margin-top: $sectionMarginTop;
+    h1 {
+      @include headingDash;
+    }
+    p {
+      margin-top: 1em;
+    }
+  }
+
+  .index-chapters {
+    color: #333;
+    margin-top: $sectionMarginTop;
+    justify-content: center;
+    .row {
+      justify-content: center;
+      margin: auto;
+      text-align: center;
+      h1 {
+        @include headingDash;
+      }
+      .col {
+        img {
+          padding: 5px;
+          height: 10em;
+          width: auto;
+          box-shadow: 0px 0px 10px #ccc;
+        }
+      }
+    }
+  }
+
+  .index-news {
+    margin-top: $sectionMarginTop;
+    .row {
+      justify-content: center;
+      h1 {
+        @include headingDash;
+      }
+    }
+  }
+
+}
 /* CSS for index.html ends */

@@ -8,6 +8,13 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
+class Update(models.Model):
+    content = models.CharField(max_length=300, verbose_name='Latest News')
+    create_date = models.DateTimeField(verbose_name = 'Created on:', default = timezone.now)
+
+    def __str__(self):
+        return "%s" % (self.content)
+
 class Event(models.Model):
     event_title = models.CharField(max_length=100, verbose_name = 'Title')
     event_description = models.TextField(verbose_name = 'Description')

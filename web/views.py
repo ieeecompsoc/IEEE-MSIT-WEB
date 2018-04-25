@@ -3,10 +3,11 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Event,Execom,Chapter,Designation,Achievment,Sig
+from .models import Event,Execom,Chapter,Designation,Achievment,Sig,Update
 
 def index(request):
-    context = {}
+    news = Update.objects.order_by('-create_date')[:5]
+    context = {'allNews': news}
     return render(request, 'index.html', context)
 
 def aboutUs(request):
