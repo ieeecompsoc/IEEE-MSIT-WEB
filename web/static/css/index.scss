@@ -371,3 +371,25 @@
 }
 
 /* CSS for about us ends */
+
+/* CSS for achievment.html begins */
+/* Use prefix achievment-*  */
+
+.achievment-wrapper {
+  h1 {
+    margin-top: 1em;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: $ieee-blue;
+  }
+  ul {
+    margin-top: 1em;
+  }
+  h3 {
+    text-align: center;
+    margin: 2em auto;
+  }
+}
+
+/* Use prefix achievment-* */

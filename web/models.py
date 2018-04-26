@@ -48,7 +48,7 @@ class Execom(models.Model):
         return "%s" % (self.name)
 
 class Achievment(models.Model):
-    achievment = models.CharField(max_length=300)
+    achievment = RichTextField(verbose_name='Achievment')
     achievment_date = models.DateTimeField(verbose_name = 'Achievment Date', default = timezone.now)
 
     def __str__(self):
