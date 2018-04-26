@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'ieeemsit',
         'USER': 'ieeemsituser',
         'PASSWORD': 'ieeemsitpassword',
-        'HOST': '172.30.63.72',
+        'HOST': 'postgresql.ieeemsitweb.svc',
         'PORT': '5432',
     }
 }
