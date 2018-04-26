@@ -25,7 +25,7 @@ SECRET_KEY = 'erpj6cj)x%^-!xs!d3$8%7*td5xletgmmctn#d1@rvg07b5)6*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '172.30.63.72']
 
 
 # Application definition
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'ieeemsit',
         'USER': 'ieeemsituser',
         'PASSWORD': 'ieeemsitpassword',
-        'HOST': '127.0.0.1',
+        'HOST': '172.30.63.72',
         'PORT': '5432',
     }
 }
