@@ -78,17 +78,20 @@ WSGI_APPLICATION = 'ieeemsit.wsgi.application'
 
 service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ieeemsit',
-        'USER': 'ieeemsituser',
-        'PASSWORD': 'ieeemsitpassword',
-        'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
-        'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ieeemsit',
+#         'USER': 'ieeemsituser',
+#         'PASSWORD': 'ieeemsitpassword',
+#         'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
+#         'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+#     }
+# }
 
+DATABASES = {
+    'default': database.config()
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
