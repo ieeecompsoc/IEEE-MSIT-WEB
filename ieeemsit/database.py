@@ -5,7 +5,7 @@ from django.conf import settings
 
 engines = {
     'sqlite': 'django.db.backends.sqlite3',
-    'postgresql': 'django.db.backends.postgresql_psycopg2',
+    'postgresql': 'django.db.backends.postgresql',
     'mysql': 'django.db.backends.mysql',
 }
 
@@ -20,7 +20,7 @@ def config():
     if not name and engine == engines['sqlite']:
         name = os.path.join(settings.BASE_DIR, 'db.sqlite3')
     return {
-        'ENGINE': engine,
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': name,
         'USER': os.getenv('DATABASE_USER'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
