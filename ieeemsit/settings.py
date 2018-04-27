@@ -83,8 +83,10 @@ DATABASES = {
         'NAME': 'ieeemsit',
         'USER': 'ieeemsituser',
         'PASSWORD': 'ieeemsitpassword',
-        'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
-        'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+        # 'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
+        'HOST': os.getenv('DATABASE_SERVICE_NAME'),
+        # 'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+        'PORT': 5432,
     }
 }
 
