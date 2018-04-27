@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'erpj6cj)x%^-!xs!d3$8%7*td5xletgmmctn#d1@rvg07b5)6*'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','erpj6cj)x%^-!xs!d3$8%7*td5xletgmmctn#d1@rvg07b5)6*')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '172.30.63.72']
+ALLOWED_HOSTS = ['localhost', '*']
 
 
 # Application definition
@@ -76,7 +76,6 @@ WSGI_APPLICATION = 'ieeemsit.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
 
 # DATABASES = {
 #     'default': {
@@ -88,6 +87,8 @@ service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
 #         'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
 #     }
 # }
+
+from . import database
 
 DATABASES = {
     'default': database.config()
