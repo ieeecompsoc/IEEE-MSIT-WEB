@@ -76,16 +76,27 @@ WSGI_APPLICATION = 'ieeemsit.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
+# service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ieeemsit',
+#         'USER': 'ieeemsituser',
+#         'PASSWORD': 'ieeemsitpassword',
+#         # 'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
+#         'HOST': os.getenv('DATABASE_SERVICE_NAME_SERVICE_HOST'),
+#         # 'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+#         'PORT': 5432,
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ieeemsit',
-        'USER': 'ieeemsituser',
-        'PASSWORD': 'ieeemsitpassword',
-        # 'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
-        'HOST': os.getenv('DATABASE_SERVICE_NAME_SERVICE_HOST'),
-        # 'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_SERVICE_NAME'),
         'PORT': 5432,
     }
 }
