@@ -10,4 +10,5 @@ urlpatterns = [
     path(r'ExCom', views.execom, name='execom'),
     path(r'achievments', views.achievment, name='achievment'),
     path(r'sig', views.sig, name='sig'),
+    path(r'health', views.health, name='health'),
 ]

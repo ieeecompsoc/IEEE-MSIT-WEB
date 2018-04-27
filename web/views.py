@@ -50,3 +50,7 @@ def sig(request):
     sig = Sig.objects.filter(pk=1)
     context={'sig':sig}
     return render(request,'sig.html',context)
+
+def health(request):
+    context={}
+    return render(request,'health.html',context)
