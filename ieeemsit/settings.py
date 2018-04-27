@@ -76,14 +76,16 @@ WSGI_APPLICATION = 'ieeemsit.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ieeemsit',
         'USER': 'ieeemsituser',
         'PASSWORD': 'ieeemsitpassword',
-        'HOST': 'postgresql.ieeemsitweb.svc',
-        'PORT': '5432',
+        'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
+        'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
     }
 }
 
