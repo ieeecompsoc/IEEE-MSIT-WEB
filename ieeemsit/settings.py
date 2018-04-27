@@ -82,8 +82,8 @@ DATABASES = {
         'NAME': 'ieeemsit',
         'USER': 'ieeemsituser',
         'PASSWORD': 'ieeemsitpassword',
-        'HOST': 'postgresql.ieeemsitweb.svc',
-        'PORT': '5432',
+        'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
+        'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
     }
 }
 
