@@ -105,3 +105,6 @@ ENV/
 
 #Uploads
 uploads/
+
+# VS Code
+.vscode/
