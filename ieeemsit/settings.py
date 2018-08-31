@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','erpj6cj)x%^-!xs!d3$8%7*td5xletgmmctn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '*']
+ALLOWED_HOSTS = ['localhost', '*', 'ieeemsit.a2hosted.com']
 
 
 # Application definition
@@ -77,30 +77,30 @@ WSGI_APPLICATION = 'ieeemsit.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 # service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'ieeemsit',
-#         'USER': 'ieeemsituser',
-#         'PASSWORD': 'ieeemsitpassword',
-#         # 'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
-#         'HOST': os.getenv('DATABASE_SERVICE_NAME_SERVICE_HOST'),
-#         # 'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
-#         'PORT': 5432,
-#     }
-# }
-
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DATABASE_NAME'),
-        'USER': os.getenv('DATABASE_USER'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': os.getenv('DATABASE_SERVICE_NAME'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ieeemsit_ieeemsit',
+        'USER': 'ieeemsit',
+        'PASSWORD': 'f)rLf7Fe]X134P',
+        'HOST': 'localhost',
+#       'HOST': os.getenv('DATABASE_SERVICE_NAME_SERVICE_HOST'),
+#       'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
         'PORT': 5432,
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'ieeemsit_ieeemsit',
+#        'USER': os.getenv('DATABASE_USER'),
+#        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+#        'HOST': os.getenv('DATABASE_SERVICE_NAME'),
+#        'PORT': 5432,
+# }
+#}
 
 # from . import database
 #
@@ -144,9 +144,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = '/static-root/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
+STATIC_ROOT = '/home/ieeemsit/testdirectory/static-root/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static-root')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
