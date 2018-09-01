@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','erpj6cj)x%^-!xs!d3$8%7*td5xletgmmctn#d1@rvg07b5)6*')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '*', 'ieeemsit.a2hosted.com']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -144,7 +145,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static-root/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
 STATIC_ROOT = '/home/ieeemsit/testdirectory/static-root/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static-root')]
 
