@@ -54,8 +54,21 @@ class Achievment(models.Model):
     def __str__(self):
         return "%s"  % (self.achievment)
 
-class Sig(models.Model):
-    sigContent = RichTextUploadingField(verbose_name='Page Content')
+class SigMentor(models.Model):
+    name = models.CharField(max_length = 100, verbose_name="Full Name")
+    contact = models.CharField(max_length = 13, verbose_name="Mobile Number")
+    # sig = models.ForeignKey(Sig,on_delete=models.CASCADE)
 
     def __str__(self):
-        return "%s" % (self.sigContent)
+        return "%s" % (self.name)
+
+class Sig(models.Model):
+    title = models.CharField(max_length=100, verbose_name="SIG Name")
+    sig_description = models.TextField(verbose_name='Sig Description', blank=False, null=True)
+    image = models.ImageField(upload_to='uploads/sigs/%Y/%m/%d/', blank=False, null=True)
+    timings = models.CharField(max_length = 50, verbose_name="Timings of SIG", blank=False, null=True)
+    members = models.ManyToManyField(SigMentor)
+
+    def __str__(self):
+        return "%s" % (self.title)
+

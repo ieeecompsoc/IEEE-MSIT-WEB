@@ -47,7 +47,7 @@ def achievment(request):
     return render(request, 'achievment.html',context)
 
 def sig(request):
-    sig = Sig.objects.filter(pk=1)
+    sig = Sig.objects.all()
     context={'sig':sig}
     return render(request,'sig.html',context)
 

@@ -77,30 +77,29 @@ WSGI_APPLICATION = 'ieeemsit.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 # service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ieeemsit_ieeemsit',
-        'USER': 'ieeemsit',
-        'PASSWORD': 'f)rLf7Fe]X134P',
-        'HOST': 'localhost',
-#       'HOST': os.getenv('DATABASE_SERVICE_NAME_SERVICE_HOST'),
-#       'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
-        'PORT': 5432,
-    }
-}
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'ieeemsit_ieeemsit',
-#        'USER': os.getenv('DATABASE_USER'),
-#        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-#        'HOST': os.getenv('DATABASE_SERVICE_NAME'),
-#        'PORT': 5432,
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ieeemsit_ieeemsit',
+#         'USER': 'ieeemsit',
+#         'PASSWORD': 'f)rLf7Fe]X134P',
+#         'HOST': 'localhost',
+# #       'HOST': os.getenv('DATABASE_SERVICE_NAME_SERVICE_HOST'),
+# #       'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+#         'PORT': 5432,
+#     }
 # }
-#}
+
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'ieeemsit_ieeemsit',
+       'USER': 'sahilkhurana',
+       'PASSWORD': 'psqlpassword',
+       'HOST': 'localhost',
+       'PORT': 5432,
+}
+}
 
 # from . import database
 #
@@ -158,8 +157,8 @@ CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery
 
 CKEDITOR_CONFIGS = {
     'default': {
-        #'skin': 'moono',
-        'skin': 'office2013',
+        'skin': 'moono',
+        #'skin': 'office2013',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],

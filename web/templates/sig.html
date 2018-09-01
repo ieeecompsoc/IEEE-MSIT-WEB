@@ -1,3 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}
+  {% include "navbar.html"%}
+{% endblock %}
+{% block title %}
+  SIGs
+{% endblock %}
+{%block index %}
+{{sig.members}}
 {% for s in sig %}
-  {{s.sigContent|safe}}
+  {{s.title}}
+  <br>
+  {{s.sig_description}}
+  <br>
+  {{s.timings}}
+  <br>
+  <img src="{{s.image.url}}">
+  <br>
+  Mentors:
+  {% for mentor in s.members.all %}
+  {{mentor.name}}
+  {{mentor.contact}}
+  {% endfor %}
 {% endfor %}
+{% endblock %}
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock %}
