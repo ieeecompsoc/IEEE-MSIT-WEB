@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','erpj6cj)x%^-!xs!d3$8%7*td5xletgmmctn#d1@rvg07b5)6*')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = dbconfig.Debug
 
 ALLOWED_HOSTS = ['localhost', '*', 'ieeemsit.a2hosted.com']
 
