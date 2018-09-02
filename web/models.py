@@ -18,7 +18,7 @@ class Update(models.Model):
 class Event(models.Model):
     event_title = models.CharField(max_length=100, verbose_name = 'Title')
     event_description = models.TextField(verbose_name = 'Description')
-    image = models.ImageField(upload_to='uploads/events/%Y/%m/%d/', blank=False, null=True)
+    image = models.ImageField(upload_to='uploads/events/', blank=False, null=True)
     event_date = models.DateTimeField(verbose_name = 'Created on:', default = timezone.now)
 
     def __str__(self):
@@ -65,7 +65,7 @@ class SigMentor(models.Model):
 class Sig(models.Model):
     title = models.CharField(max_length=100, verbose_name="SIG Name")
     sig_description = models.TextField(verbose_name='Sig Description', blank=False, null=True)
-    image = models.ImageField(upload_to='uploads/sigs/%Y/%m/%d/', blank=False, null=True)
+    image = models.ImageField(upload_to='uploads/sigs/', blank=False, null=True)
     timings = models.CharField(max_length = 50, verbose_name="Timings of SIG", blank=False, null=True)
     members = models.ManyToManyField(SigMentor)
 
