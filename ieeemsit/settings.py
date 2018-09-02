@@ -78,25 +78,13 @@ WSGI_APPLICATION = 'ieeemsit.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 # service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'ieeemsit_ieeemsit',
-#         'USER': 'ieeemsit',
-#         'PASSWORD': 'f)rLf7Fe]X134P',
-#         'HOST': 'localhost',
-# #       'HOST': os.getenv('DATABASE_SERVICE_NAME_SERVICE_HOST'),
-# #       'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
-#         'PORT': 5432,
-#     }
-# }
 
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': dbconfig.database_config['NAME'],#'ieeemsit_ieeemsit',
-       'USER': dbconfig.database_config['USER'],#'sahilkhurana',
-       'PASSWORD': dbconfig.database_config['PASSWORD'],#'psqlpassword',
+       'NAME': dbconfig.database_config['NAME'],
+       'USER': dbconfig.database_config['USER'],
+       'PASSWORD': dbconfig.database_config['PASSWORD'],
        'HOST': 'localhost',
        'PORT': 5432,
 }
@@ -145,12 +133,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static-root/'
-STATIC_ROOT = dbconfig.static_root_path#os.path.join(BASE_DIR, 'static-root')
-# STATIC_ROOT = '/home/ieeemsit/testdirectory/static-root/'
+STATIC_ROOT = dbconfig.static_root_path
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static-root')]
 
 MEDIA_URL = '/uploads/'
-MEDIA_ROOT = dbconfig.media_root_path#os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = dbconfig.media_root_path
 
 CKEDITOR_UPLOAD_PATH = ""
 CKEDITOR_BROWSE_SHOW_DIRS = True
