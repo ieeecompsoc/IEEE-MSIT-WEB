@@ -231,19 +231,23 @@ body {
   .events-card {
     box-shadow: 0px 0px 15px #aaa;
     margin: 1.5em auto;
+    // height: 190px;
     .events-image {
       padding-left: 0;
+      padding-right: 0;
+      overflow: hidden;
       img {
         height: auto;
         width: 100%;
-        min-height: 12em;
-        max-height: 12em;
+        min-height: 13em;
+        max-height: 13em;
         object-fit: cover;
         object-position: center;
       }
     }
     .events-content {
       min-height: 12em;
+      padding-bottom: 10px;
       .events-title-date {
         padding-top: 0.5em;
         color: $ieee-blue;
