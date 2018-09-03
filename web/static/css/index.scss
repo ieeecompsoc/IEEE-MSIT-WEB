@@ -177,7 +177,7 @@ body {
       .col {
         display: flex;
         height: 12em;
-        width: 250px;
+        max-width: 250px;
         box-shadow: 0px 0px 10px #ccc;
         margin: 1em;
         a {
