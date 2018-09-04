@@ -410,3 +410,16 @@ body {
 }
 
 /* Use prefix achievment-* */
+
+// Media Queries
+@media only screen and (max-width: 800px) {
+  #index {
+    .index-carousel {
+      .col {
+        img {
+          height: 20em;
+        }
+      }
+    }
+  }
+}
