@@ -38,7 +38,8 @@ def execom(request):
     mttsMembers = Execom.objects.filter(chapter__chapter__contains="MTTS")
     pesMembers = Execom.objects.filter(chapter__chapter__contains="PES")
     wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE")
-    context = {'allMembers':allMembers,'csMembers':csMembers,'mttsMembers':mttsMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers}
+    taMembers = Execom.objects.filter(chapter__chapter__contains="TA")
+    context = {'allMembers':allMembers,'csMembers':csMembers,'mttsMembers':mttsMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers,'taMembers':taMembers}
     return render(request, 'execom.html', context)
 
 def achievment(request):
