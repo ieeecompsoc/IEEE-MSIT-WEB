@@ -321,6 +321,19 @@ body {
     text-align: justify;
     font-size: 0.9em;
   }
+  .specific-report{
+    .btn-primary {
+      background-color: $ieee-blue;
+      border-color: $ieee-blue;
+      -webkit-appearance: initial;
+      &:focus,&:hover,&:active {
+        background-color: $ieee-blue;
+        border-color: $ieee-blue;
+        outline-color: transparent;
+        box-shadow: none;
+      }
+    }
+  }
 }
 
 /* CSS for specificEvent.html ends*/
