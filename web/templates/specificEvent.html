@@ -30,8 +30,14 @@
       {{ eventData.event_description|safe }}
     </div>
   </div>
-  <div class="row specific-report">
-    <a type="button" class="btn btn-primary"{% if eventData.report %} href="{{eventData.report.url}}" {% else %} href="#" {% endif %} >Report</a>
+  <div class="col specific-buttons">
+    {% if eventData in pastEvents and eventData.report %}
+      <a type="button" class="btn btn-primary" href="{{eventData.report.url}}"  >Get Report</a>
+    {% endif %}
+
+    {% if eventData in futureEvents and eventData.register_url %}
+      <a type="button" class="btn btn-primary"  href="{{ eventData.register_url }}" >Register Now</a>
+    {% endif %}
   </div>
 
 </div>

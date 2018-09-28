@@ -19,7 +19,8 @@ class Event(models.Model):
     event_title = models.CharField(max_length=100, verbose_name = 'Title')
     event_description = models.TextField(verbose_name = 'Description')
     image = models.ImageField(upload_to='events/', blank=False, null=True)
-    report = models.FileField(upload_to='events/', null=True)
+    report = models.FileField(upload_to='events/', null=True, blank=True)
+    register_url = models.URLField(max_length=100, verbose_name='Register Url', blank=True)
     event_date = models.DateTimeField(verbose_name = 'Created on:', default = timezone.now)
 
     def __str__(self):

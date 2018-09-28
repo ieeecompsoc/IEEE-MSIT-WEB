@@ -27,7 +27,9 @@ def events(request):
 
 def specificEvent(request, event_id, slug):
     eventData = get_object_or_404(Event, pk=event_id)
-    context = {'eventData':eventData}
+    futureEvents = Event.objects.filter(event_date__gte=timezone.now())
+    pastEvents = Event.objects.filter(event_date__lt=timezone.now())
+    context = {'eventData':eventData, 'futureEvents': futureEvents, 'pastEvents' : pastEvents}
     return render(request, 'specificEvent.html', context)
 
 def execom(request):
