@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="row specific-report">
-    <a type="button" class="btn btn-primary" href="" >Report</a>
+    <a type="button" class="btn btn-primary"{% if eventData.report %} href="{{eventData.report.url}}" {% else %} href="#" {% endif %} >Report</a>
   </div>
 
 </div>
