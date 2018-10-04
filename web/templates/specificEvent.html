@@ -31,6 +31,7 @@
     </div>
   </div>
   <div class="col specific-buttons">
+    <br>
     {% if eventData in pastEvents and eventData.report %}
       <a type="button" class="btn btn-primary" href="{{eventData.report.url}}"  >Get Report</a>
     {% endif %}
