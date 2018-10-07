@@ -8,9 +8,9 @@ import os
 # }
 
 database_config = {
-    'NAME' : 'ieeemsit2',
-    'USER' : 'ankush2',
-    'PASSWORD': 'garg123ankush'
+    'NAME' : 'ieeemsit',
+    'USER' : 'ayush',
+    'PASSWORD': 'ayush123'
 }
 
 
