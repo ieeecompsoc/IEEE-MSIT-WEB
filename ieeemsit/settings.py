@@ -133,8 +133,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static-root/'
-STATIC_ROOT = dbconfig.static_root_path
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static-root')]
+#STATIC_ROOT = dbconfig.static_root_path
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static-root')]
 
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = dbconfig.media_root_path
