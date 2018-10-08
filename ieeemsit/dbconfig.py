@@ -7,10 +7,17 @@ import os
 #     'PASSWORD': 'psqlpassword'
 # }
 
+# database_config = {
+#     'NAME' : 'ieeemsit',
+#     'USER' : 'ayush',
+#     'PASSWORD': 'ayush123'
+# }
+
+
 database_config = {
-    'NAME' : 'ieeemsit',
-    'USER' : 'ayush',
-    'PASSWORD': 'ayush123'
+    'NAME' : 'ieeemsit2',
+    'USER' : 'ankush2',
+    'PASSWORD': 'garg123ankush'
 }
 
 
