@@ -13,11 +13,7 @@ import os
     #'PASSWORD': 'garg123ankush'
 #}
 
-database_config = {
-    'NAME' : 'ieee',
-    'USER' : 'postgres',
-    'PASSWORD': 'Siddharth@123'
-}
+
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
