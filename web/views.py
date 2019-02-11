@@ -54,3 +54,7 @@ def sig(request):
 def health(request):
     context={}
     return render(request,'health.html',context)
+
+def tpe(request):
+    context {}
+    return render(request, 'tpe.html', context)
