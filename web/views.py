@@ -56,5 +56,5 @@ def health(request):
     return render(request,'health.html',context)
 
 def tpe(request):
-    context {}
+    context = {}
     return render(request, 'tpe.html', context)
