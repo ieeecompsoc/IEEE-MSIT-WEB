@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','erpj6cj)x%^-!xs!d3$8%7*td5xletgmmctn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = dbconfig.Debug
 
-ALLOWED_HOSTS = ['localhost', '*', 'ieeemsit.a2hosted.com']
+ALLOWED_HOSTS = ['localhost', '*', 'ieeemsit.a2hosted.com', '139.59.79.194']
 
 
 # Application definition
