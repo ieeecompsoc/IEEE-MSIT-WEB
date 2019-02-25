@@ -44,6 +44,9 @@
           <div class="row">
             <div class="col events-readmore">
               <a type="button" class="btn btn-primary" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
+              {% if event.register_url %}
+              <a type="button" class="btn btn-primary"  href="{{ event.register_url }}"  target="_new" >Register Now</a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -86,6 +89,9 @@
           <div class="row">
             <div class="col events-readmore">
               <a type="button" class="btn btn-primary" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
+              {% if event.report %}
+              <a type="button" class="btn btn-primary"  href="{{ event.report.url }}"  target="_new" >Get Report</a>
+              {% endif %}
             </div>
           </div>
         </div>

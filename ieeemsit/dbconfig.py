@@ -7,11 +7,6 @@ database_config = {
     'PASSWORD': 'psqlpassword'
 }
 
-#database_config = {
-#    'NAME' : 'ieeemsit2',
-#    'USER' : 'ankush2',
-#    'PASSWORD': 'garg123ankush'
-#}
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,4 +15,4 @@ static_root_path = os.path.join(BASE_DIR, 'static-root')
 
 media_root_path = os.path.join(BASE_DIR, 'uploads')
 
-Debug = True
+Debug = False
