@@ -429,8 +429,14 @@ body {
   #index {
     .index-carousel {
       .col {
-        img {
-          height: 20em;
+        .carousel {
+          .carousel-inner {
+            .carousel-item {
+              img {
+                height: 20em;
+              }
+            }
+          }
         }
       }
     }

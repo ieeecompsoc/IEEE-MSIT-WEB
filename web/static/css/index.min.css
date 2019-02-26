@@ -244,11 +244,11 @@ body {
 .specific-wrapper .specific-description {
   text-align: justify;
   font-size: 0.9em; }
-.specific-wrapper .specific-buttons .btn-primary {
+.specific-wrapper .specific-report .btn-primary {
   background-color: #006790;
   border-color: #006790;
   -webkit-appearance: initial; }
-  .specific-wrapper .specific-buttons .btn-primary:focus, .specific-wrapper .specific-report .btn-primary:hover, .specific-wrapper .specific-report .btn-primary:active {
+  .specific-wrapper .specific-report .btn-primary:focus, .specific-wrapper .specific-report .btn-primary:hover, .specific-wrapper .specific-report .btn-primary:active {
     background-color: #006790;
     border-color: #006790;
     outline-color: transparent;
@@ -317,7 +317,7 @@ body {
 
 /* Use prefix achievment-* */
 @media only screen and (max-width: 800px) {
-  #index .index-carousel .col img {
+  #index .index-carousel .col .carousel .carousel-inner .carousel-item img {
     height: 20em; } }
 
 /*# sourceMappingURL=index.min.css.map */
