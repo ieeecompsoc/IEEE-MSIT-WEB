@@ -11,4 +11,5 @@ urlpatterns = [
     path(r'achievments', views.achievment, name='achievment'),
     path(r'sig', views.sig, name='sig'),
     path(r'health', views.health, name='health'),
+    path(r'tpe', views.tpe, name='tpe'),
 ]

@@ -27,7 +27,9 @@ def events(request):
 
 def specificEvent(request, event_id, slug):
     eventData = get_object_or_404(Event, pk=event_id)
-    context = {'eventData':eventData}
+    futureEvents = Event.objects.filter(event_date__gte=timezone.now())
+    pastEvents = Event.objects.filter(event_date__lt=timezone.now())
+    context = {'eventData':eventData, 'futureEvents': futureEvents, 'pastEvents' : pastEvents}
     return render(request, 'specificEvent.html', context)
 
 def execom(request):
@@ -38,7 +40,8 @@ def execom(request):
     mttsMembers = Execom.objects.filter(chapter__chapter__contains="MTTS")
     pesMembers = Execom.objects.filter(chapter__chapter__contains="PES")
     wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE")
-    context = {'allMembers':allMembers,'csMembers':csMembers,'mttsMembers':mttsMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers}
+    taMembers = Execom.objects.filter(chapter__chapter__contains="TA")
+    context = {'allMembers':allMembers,'csMembers':csMembers,'mttsMembers':mttsMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers,'taMembers':taMembers}
     return render(request, 'execom.html', context)
 
 def achievment(request):
@@ -54,3 +57,7 @@ def sig(request):
 def health(request):
     context={}
     return render(request,'health.html',context)
+
+def tpe(request):
+    context = {}
+    return render(request, 'tpe.html', context)

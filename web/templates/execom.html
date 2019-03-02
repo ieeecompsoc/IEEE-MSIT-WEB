@@ -14,6 +14,36 @@
         <h1 class="excom-title">ExCom 2018-19</h1>
       </div>
       <div class="row justify-content-center">
+        <h2 class="excom-chapter">Advisory Board</h2>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="excom-teams">
+            {% for member in taMembers %}
+              <div class="excom-card align-items-center">
+                {% if member.image %}
+                  <img src="{{member.image.url}}">
+                {% else %}
+                  <img src="{% static 'images/defaultDP.jpg' %}">
+                {% endif %}
+                <br>
+                {{member.name}}
+                <br>
+                {{member.designation}}
+                <br>
+                {% if member.facebook %}
+                  <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+                {% endif %}
+                {% if member.linkedIn %}
+                  <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
         <h2 class="excom-chapter">IEEE Main</h2>
       </div>
       <div class="row">
@@ -22,9 +52,9 @@
             {% for member in mainMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
-                  <img src="{{member.image.url}}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
                 {% else %}
-                  <img src="{% static 'images/defaultDP.jpg' %}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
                 {{member.name}}
@@ -51,9 +81,9 @@
             {% for member in csMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
-                  <img src="{{member.image.url}}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
                 {% else %}
-                  <img src="{% static 'images/defaultDP.jpg' %}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
                 {{member.name}}
@@ -80,9 +110,9 @@
             {% for member in mttsMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
-                  <img src="{{member.image.url}}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
                 {% else %}
-                  <img src="{% static 'images/defaultDP.jpg' %}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
                 {{member.name}}
@@ -109,9 +139,9 @@
             {% for member in pesMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
-                  <img src="{{member.image.url}}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} > <img src="{{member.image.url}}"></a>
                 {% else %}
-                  <img src="{% static 'images/defaultDP.jpg' %}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
                 {{member.name}}
@@ -138,9 +168,9 @@
             {% for member in wieMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
-                  <img src="{{member.image.url}}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
                 {% else %}
-                  <img src="{% static 'images/defaultDP.jpg' %}">
+                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
                 {{member.name}}
