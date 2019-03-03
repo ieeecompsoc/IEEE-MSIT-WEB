@@ -1,6 +1,7 @@
 /* Variables */
 
   $ieee-blue: #006790;
+  
   $sectionMarginTop: 3em;
 
 /* End of Variables */
@@ -353,6 +354,7 @@ body {
     .excom-card {
       text-align: center;
       margin: auto;
+
     }
     img {
       width: 10em;
@@ -368,7 +370,8 @@ body {
         color: $ieee-blue;
       }
     }
-  }
+
+}
 }
 /* CSS for excom ends */
 

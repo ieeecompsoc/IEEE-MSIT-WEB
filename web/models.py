@@ -45,6 +45,7 @@ class Execom(models.Model):
     designation = models.ForeignKey(Designation, on_delete=models.CASCADE)
     facebook = models.URLField(blank=True, null=True)
     linkedIn = models.URLField(blank=True, null=True)
+    email = models.EmailField(blank=True, null=True, unique=True)
     resume = models.FileField(upload_to='execom/', blank=True, null=True)
 
     def __str__(self):

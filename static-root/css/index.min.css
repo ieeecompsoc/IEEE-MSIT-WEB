@@ -241,7 +241,7 @@ body {
   text-align: justify;
   font-size: 0.9em; }
 .specific-wrapper .specific-buttons .btn-primary {
-  background-color: red;
+  background-color: #006790;
   border-color: #006790;
   -webkit-appearance: initial; }
   .specific-wrapper .specific-buttons .btn-primary:focus, .specific-wrapper .specific-buttons .btn-primary:hover, .specific-wrapper .specific-buttons .btn-primary:active {

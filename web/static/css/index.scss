@@ -372,6 +372,15 @@ body {
         color: $ieee-blue;
       }
     }
+    .mail-btn{
+      color: red;
+      &:focus,&:hover,&:active {
+        color: red;
+      }
+      width: 2em;
+      height: 2em;
+      border-radius: 25%;      
+    }
   }
 }
 /* CSS for excom ends */
