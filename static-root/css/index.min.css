@@ -305,6 +305,7 @@ body {
 }
 .specific-wrapper .specific-description {
   text-align: justify;
+<<<<<<< 68414f15184fde419124de683d46b3eead54dd04
   font-size: 0.9em;
 }
 .specific-wrapper .specific-report .btn-primary {
@@ -313,6 +314,10 @@ body {
   -webkit-appearance: initial;
 }
 .specific-wrapper .specific-report .btn-primary:focus, .specific-wrapper .specific-report .btn-primary:hover, .specific-wrapper .specific-report .btn-primary:active {
+=======
+  font-size: 0.9em; }
+.specific-wrapper .specific-buttons .btn-primary {
+>>>>>>> mail-btn added
   background-color: #006790;
   border-color: #006790;
   outline-color: transparent;
