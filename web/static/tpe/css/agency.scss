@@ -585,3 +585,33 @@ img::-moz-selection {
 
 body {
   webkit-tap-highlight-color: #006699; }
+
+
+// CUSTOM FOR SPONSORS
+
+#sponsors {
+  .container {
+    .logos {
+      a {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+        text-decoration: none;
+        height: 170px;
+        color: black;
+        img {
+          max-height: 150px;
+          max-width: 100%;
+          width: auto;
+        }
+        h5 {
+          margin-top: 15px;
+          text-align: center;
+          // position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -684,4 +684,21 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #006699; }
 
+#sponsors .container .logos a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 170px;
+  color: black; }
+  #sponsors .container .logos a img {
+    max-height: 150px;
+    max-width: 100%;
+    width: auto; }
+  #sponsors .container .logos a h5 {
+    margin-top: 15px;
+    text-align: center;
+    bottom: 0; }
+
 /*# sourceMappingURL=agency.css.map */
