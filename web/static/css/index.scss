@@ -1,7 +1,8 @@
+@charset "UTF-8";
 /* Variables */
 
-  $ieee-blue: #006790;
-  $sectionMarginTop: 3em;
+$ieee-blue: #006790;
+$sectionMarginTop: 3em;
 
 /* End of Variables */
 
@@ -423,6 +424,54 @@ body {
 }
 
 /* Use prefix achievment-* */
+
+/* CSS for team begins */
+/* Use prefix team- */
+
+.team-wrapper {
+  .team-title {
+    margin-top: 1em;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: $ieee-blue;
+  }
+
+  .team-container {
+    min-height: 60vh; 
+    width: 80%; 
+    margin: 0 auto;
+  }
+
+  .team-card {
+    min-width: 280px;
+  }
+
+  .team-image {
+    border-radius: 50%; 
+    height: 100px; 
+    width: 100px; 
+    display: block; 
+    margin: 0 auto; 
+    align-self: center;
+  }
+
+  .team-member-name {
+    text-align: center;
+  }
+
+  .team-card-line {
+    border-right: 1px solid black;
+    a {
+      color: inherit;
+    }
+  }
+
+  .team-align {
+    justify-content: space-around;
+    justify-content: space-evenly;
+  }
+}
 
 // Media Queries
 @media only screen and (max-width: 800px) {

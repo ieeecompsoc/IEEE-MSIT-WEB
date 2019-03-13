@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Event,Execom,Chapter,Designation,Achievment,Sig,Update
+from .models import Event,Execom,Chapter,Designation,Achievment,Sig,Update,Team
 
 def index(request):
     news = Update.objects.order_by('-create_date')[:5]
@@ -61,3 +61,9 @@ def health(request):
 def tpe(request):
     context = {}
     return render(request, 'tpe.html', context)
+    
+def team(request):
+	team = Team.objects.all()
+	context = {'team': team}
+	print(context)
+	return render(request, 'team.html', context)
