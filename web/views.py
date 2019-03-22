@@ -64,5 +64,5 @@ def tpe(request):
     
 def team(request):
 	team = Team.objects.all()
-	context = {'team': teamprint(context)
+	context = {'team': team}
 	return render(request, 'team.html', context)
