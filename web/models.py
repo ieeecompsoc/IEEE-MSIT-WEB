@@ -74,3 +74,14 @@ class Sig(models.Model):
 
     def __str__(self):
         return "%s" % (self.title)
+
+class Team(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Full Name")
+    email = models.EmailField(max_length=100)
+    image = models.ImageField(upload_to='team/', blank=True, null=True)
+    linkedIn = models.URLField(blank=True, null=True)
+    github = models.URLField(blank=True, null=True)
+    resume = models.FileField(upload_to='team/', blank=True, null=True)
+
+    def __str__(self):
+        return "%s" % (self.name)

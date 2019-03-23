@@ -1,7 +1,7 @@
 /* Variables */
 
-  $ieee-blue: #006790;
-  $sectionMarginTop: 3em;
+$ieee-blue: #006790;
+$sectionMarginTop: 3em;
 
 /* End of Variables */
 
@@ -177,7 +177,7 @@ body {
       .col {
         display: flex;
         height: 12em;
-        width: 250px;
+        max-width: 250px;
         box-shadow: 0px 0px 10px #ccc;
         margin: 1em;
         a {
@@ -231,18 +231,23 @@ body {
   .events-card {
     box-shadow: 0px 0px 15px #aaa;
     margin: 1.5em auto;
+    // height: 190px;
     .events-image {
       padding-left: 0;
+      padding-right: 0;
+      overflow: hidden;
       img {
         height: auto;
         width: 100%;
-        max-height: 12em;
+        min-height: 13em;
+        max-height: 13em;
         object-fit: cover;
         object-position: center;
       }
     }
     .events-content {
       min-height: 12em;
+      padding-bottom: 10px;
       .events-title-date {
         padding-top: 0.5em;
         color: $ieee-blue;
@@ -316,9 +321,9 @@ body {
     text-align: justify;
     font-size: 0.9em;
   }
-  .specific-buttons {
+  .specific-report{
     .btn-primary {
-      background-color:$ieee-blue;
+      background-color: $ieee-blue;
       border-color: $ieee-blue;
       -webkit-appearance: initial;
       &:focus,&:hover,&:active {
@@ -329,7 +334,6 @@ body {
       }
     }
   }
-
 }
 
 /* CSS for specificEvent.html ends*/
@@ -419,3 +423,42 @@ body {
 }
 
 /* Use prefix achievment-* */
+
+/* CSS for team begins */
+/* Use prefix team- */
+
+.team-wrapper {
+  h1 {
+    margin-top: 1em;
+    text-align: center;
+    text-decoration: underline !important;
+    text-decoration-style: solid;
+    text-decoration-color: $ieee-blue;
+  }
+
+  .container {
+    min-height: 60vh; 
+    width: 80%; 
+    margin: 0 auto;
+  }
+
+}
+
+// Media Queries
+@media only screen and (max-width: 800px) {
+  #index {
+    .index-carousel {
+      .col {
+        .carousel {
+          .carousel-inner {
+            .carousel-item {
+              img {
+                height: 20em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

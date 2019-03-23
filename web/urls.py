@@ -12,4 +12,5 @@ urlpatterns = [
     path(r'sig', views.sig, name='sig'),
     path(r'health', views.health, name='health'),
     path(r'tpe', views.tpe, name='tpe'),
+    path(r'team', views.team, name='team'),
 ]
