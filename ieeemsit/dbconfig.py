@@ -1,16 +1,10 @@
 #!/usr/bin/env python
 import os
 
-# database_config = {
-#     'NAME' : 'ieeemsit_ieeemsit',
-#     'USER' : 'ieeemsit',
-#     'PASSWORD': 'psqlpassword'
-# }
-
 database_config = {
-    'NAME' : 'ieee',
-    'USER' : 'postgres',
-    'PASSWORD': 'Siddharth@123'
+    'NAME' : 'ieeemsit_ieeemsit',
+    'USER' : 'ieeemsit',
+    'PASSWORD': 'psqlpassword'
 }
 
 
