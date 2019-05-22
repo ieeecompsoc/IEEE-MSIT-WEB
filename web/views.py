@@ -58,9 +58,9 @@ def health(request):
     context={}
     return render(request,'health.html',context)
 
-def tpe(request):
+def spp(request):
     context = {}
-    return render(request, 'tpe.html', context)
+    return render(request, 'spp2019.html', context)
     
 def team(request):
 	team = Team.objects.all()
