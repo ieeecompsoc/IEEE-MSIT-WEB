@@ -347,6 +347,7 @@ body {
     text-decoration: underline;
     text-decoration-style: solid;
     text-decoration-color: $ieee-blue;
+
   }
   .excom-chapter {
     margin: 1em auto;
@@ -354,11 +355,16 @@ body {
     text-decoration-style: dotted;
     text-decoration-color: $ieee-blue;
   }
+
   .excom-teams {
+    
     .excom-card {
       text-align: center;
       margin: auto;
-
+      
+    }
+    .excom-imgs{
+      display: inline-block;
     }
     img {
       width: 10em;
@@ -367,6 +373,7 @@ body {
       object-position: center;
       border-radius: 50%;
       margin: auto;
+      // display: inline-block; 
     }
     a {
       color: $ieee-blue;
