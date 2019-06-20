@@ -20,8 +20,8 @@ def aboutIEEE(request):
 
 def events(request):
     eventList = Event.objects.order_by('-event_date')
-    futureEvents = Event.objects.filter(event_date__gte=timezone.now())
-    pastEvents = Event.objects.filter(event_date__lt=timezone.now())
+    futureEvents = Event.objects.filter(event_date__gte=timezone.now()).order_by('-event_date')
+    pastEvents = Event.objects.filter(event_date__lt=timezone.now()).order_by('-event_date')
     context = {'eventList': eventList, 'futureEvents': futureEvents, 'pastEvents' : pastEvents}
     return render(request, 'events.html', context)
 
@@ -35,13 +35,13 @@ def specificEvent(request, event_id, slug):
 def execom(request):
     allMembers = Execom.objects.all()
     #the below filter goes to Execom - Chapter from there it goes to Chapter - chapter where it finally searches the string.
-    mainMembers = Execom.objects.filter(chapter__chapter__contains="Main")
-    csMembers = Execom.objects.filter(chapter__chapter__contains="CS")
-    mttsMembers = Execom.objects.filter(chapter__chapter__contains="MTTS")
-    pesMembers = Execom.objects.filter(chapter__chapter__contains="PES")
-    wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE")
-    taMembers = Execom.objects.filter(chapter__chapter__contains="TA")
-    rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS")
+    mainMembers = Execom.objects.filter(chapter__chapter__contains="Main").order_by('order')
+    csMembers = Execom.objects.filter(chapter__chapter__contains="CS").order_by('order')
+    mttsMembers = Execom.objects.filter(chapter__chapter__contains="MTTS").order_by('order')
+    pesMembers = Execom.objects.filter(chapter__chapter__contains="PES").order_by('order')
+    wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE").order_by('order')
+    taMembers = Execom.objects.filter(chapter__chapter__contains="TA").order_by('order')
+    rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS").order_by('order')
     context = {'allMembers':allMembers,'csMembers':csMembers,'mttsMembers':mttsMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers,'taMembers':taMembers, 'rasMembers':rasMembers}
     return render(request, 'execom.html', context)
 
