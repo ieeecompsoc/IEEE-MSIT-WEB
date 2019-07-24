@@ -47,6 +47,7 @@ class Execom(models.Model):
     linkedIn = models.URLField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True, unique=True)
     resume = models.FileField(upload_to='execom/', blank=True, null=True)
+    order = models.IntegerField(null=True)
 
     def __str__(self):
         return "%s" % (self.name)

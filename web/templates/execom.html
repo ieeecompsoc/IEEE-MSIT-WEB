@@ -9,7 +9,7 @@
 {% block index %}
 <div class="container excom-wrapper">
   <div class="row justify-content-center">
-    <div class="col-10">
+    <div class="col">
       <div class="row justify-content-center">
         <h1 class="excom-title">ExCom 2018-19</h1>
       </div>
@@ -18,16 +18,16 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="excom-teams">
+          <div class="excom-teams d-md-flex felx-row" >
             {% for member in taMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
                   <img src="{{member.image.url}}">
                 {% else %}
-                  <img src="{% static 'images/defaultDP.jpg' %}">
+                  <img  src="{% static 'images/defaultDP.jpg' %}">
                 {% endif %}
                 <br>
-                {{member.name}}
+                <strong>{{member.name}}</strong>
                 <br>
                 {{member.designation}}
                 <br>
@@ -51,7 +51,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="excom-teams">
+          <div class="excom-teams d-md-flex flex-row">
             {% for member in mainMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
@@ -60,7 +60,7 @@
                   <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
-                {{member.name}}
+                <strong>{{member.name}}</strong>
                 <br>
                 {{member.designation}}
                 <br>
@@ -83,7 +83,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="excom-teams">
+          <div class="excom-teams d-md-flex flex-row">
             {% for member in csMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
@@ -92,7 +92,7 @@
                   <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
-                {{member.name}}
+                <strong>{{member.name}}</strong>
                 <br>
                 {{member.designation}}
                 <br>
@@ -111,12 +111,12 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <h2 class="excom-chapter">IEEE MTTS</h2>
+        <h2 class="excom-chapter">IEEE RAS</h2>
       </div>
       <div class="row">
         <div class="col">
-          <div class="excom-teams">
-            {% for member in mttsMembers %}
+          <div class="excom-teams d-md-flex flex-row">
+            {% for member in rasMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
                   <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
@@ -124,7 +124,7 @@
                   <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
-                {{member.name}}
+                <strong>{{member.name}}</strong>
                 <br>
                 {{member.designation}}
                 <br>
@@ -147,7 +147,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="excom-teams">
+          <div class="excom-teams d-md-flex flex-row">
             {% for member in pesMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
@@ -156,7 +156,7 @@
                   <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
-                {{member.name}}
+                <strong>{{member.name}}</strong>
                 <br>
                 {{member.designation}}
                 <br>
@@ -179,7 +179,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="excom-teams">
+          <div class="excom-teams d-md-flex flex-row">
             {% for member in wieMembers %}
               <div class="excom-card align-items-center">
                 {% if member.image %}
@@ -188,7 +188,7 @@
                   <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
                 {% endif %}
                 <br>
-                {{member.name}}
+                <strong>{{member.name}}</strong>
                 <br>
                 {{member.designation}}
                 <br>
