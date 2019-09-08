@@ -68,22 +68,22 @@ def team(request):
 	return render(request, 'team.html', context)
 
 def cs(request):
-    csMembers = Execom.objects.filter(chapter__chapter__contains="CS")
+    csMembers = Execom.objects.filter(chapter__chapter__contains="CS").order_by('-create_date')
     descriptions = Chapter.objects.filter()
     context = {'members':csMembers}
     return render(request,'cs.html',context)
 
 def pes(request):
-    pesMembers = Execom.objects.filter(chapter__chapter__contains="PES")
+    pesMembers = Execom.objects.filter(chapter__chapter__contains="PES").order_by('-create_date')
     context = {'members':pesMembers}
     return render(request,'pes.html',context)
 
 def ras(request):
-    rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS")
+    rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS").order_by('-create_date')
     context = {'members':rasMembers}
     return render(request,'ras.html',context)
 
 def wie(request):
-    wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE")
+    wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE").order_by('-create_date')
     context = {'members':wieMembers}
     return render(request,'wie.html',context)
