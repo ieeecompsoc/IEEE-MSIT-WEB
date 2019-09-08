@@ -35,13 +35,13 @@ def specificEvent(request, event_id, slug):
 def execom(request):
     allMembers = Execom.objects.all()
     #the below filter goes to Execom - Chapter from there it goes to Chapter - chapter where it finally searches the string.
-    mainMembers = Execom.objects.filter(chapter__chapter__contains="Main")
-    csMembers = Execom.objects.filter(chapter__chapter__contains="CS")
-    mttsMembers = Execom.objects.filter(chapter__chapter__contains="MTTS")
-    pesMembers = Execom.objects.filter(chapter__chapter__contains="PES")
-    wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE")
-    taMembers = Execom.objects.filter(chapter__chapter__contains="TA")
-    context = {'allMembers':allMembers,'csMembers':csMembers,'mttsMembers':mttsMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers,'taMembers':taMembers}
+    mainMembers = Execom.objects.filter(chapter__chapter__contains="Main").order_by('-create_date')
+    csMembers = Execom.objects.filter(chapter__chapter__contains="CS").order_by('-create_date')
+    rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS").order_by('-create_date')
+    pesMembers = Execom.objects.filter(chapter__chapter__contains="PES").order_by('-create_date')
+    wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE").order_by('-create_date')
+    taMembers = Execom.objects.filter(chapter__chapter__contains="TA").order_by('-create_date')
+    context = {'allMembers':allMembers,'csMembers':csMembers,'rasMembers':rasMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers,'taMembers':taMembers}
     return render(request, 'execom.html', context)
 
 def achievment(request):
@@ -66,3 +66,24 @@ def team(request):
 	team = Team.objects.all()
 	context = {'team': team}
 	return render(request, 'team.html', context)
+
+def cs(request):
+    csMembers = Execom.objects.filter(chapter__chapter__contains="CS")
+    descriptions = Chapter.objects.filter()
+    context = {'members':csMembers}
+    return render(request,'cs.html',context)
+
+def pes(request):
+    pesMembers = Execom.objects.filter(chapter__chapter__contains="PES")
+    context = {'members':pesMembers}
+    return render(request,'pes.html',context)
+
+def ras(request):
+    rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS")
+    context = {'members':rasMembers}
+    return render(request,'ras.html',context)
+
+def wie(request):
+    wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE")
+    context = {'members':wieMembers}
+    return render(request,'wie.html',context)
