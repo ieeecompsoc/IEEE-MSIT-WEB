@@ -69,7 +69,6 @@ def team(request):
 
 def cs(request):
     csMembers = Execom.objects.filter(chapter__chapter__contains="CS").order_by('-create_date')
-    descriptions = Chapter.objects.filter()
     context = {'members':csMembers}
     return render(request,'cs.html',context)
 
