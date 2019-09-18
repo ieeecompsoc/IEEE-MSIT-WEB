@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 {% block navbar %}
-  {% include "navbar.html"%}
+{% include "navbar.html"%}
 {% endblock %}
 {% block title %}
-  SIGs
+SIGs
 {% endblock %}
 {%block index %}
 
 {{sig.members}}
 <div class="container events-container">
-    <div class="row">
-        <div class="col events-category">
-          <h2>SIGs</h2>
-        </div>
-      </div>
+  <div class="row">
+    <div class="col events-category">
+      <h2>SIGs 2018-2019</h2>
+    </div>
+  </div>
   <div class="events-past">
     {% for s in sig %}
     <div class="row events-card">
-        <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
-            <img src="{{s.image.url}}">
-        </div>
-    <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
+      <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
+        <img src="{{s.image.url}}">
+      </div>
+      <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
         <div class="row events-title-date">
           <div class="col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
             <h5>
@@ -55,9 +55,9 @@
       </div>
     </div>
     {% endfor %}
-</div>
+  </div>
 </div>
 {% endblock %}
 {% block footer %}
-  {% include "footer.html" %}
+{% include "footer.html" %}
 {% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}
+{% include "navbar.html"%}
+{% endblock %}
+{% block title %}
+IEEE PES
+{% endblock %}
+{% block index %}
+<div class="container specific-wrapper">
+    <div class="row specific-image align-items-center">
+        <div class="col">
+            <img src="{% static 'images/PES_MSIT_Colr.png' %}" style="height:162px;width:214px" />
+        </div>
+    </div>
+    <div class="row specific-title">
+        <div class="col">
+            <h1>IEEE MSIT POWER AND ENERGY SOCIETY</h1>
+        </div>
+    </div>
+    <div class="row index-mission text-justify  justify-content-center">
+        <div class="col-10">
+            <p>
+                The Power & Energy Society (PES) provides the world's largest forum for sharing the latest in
+                technological developments in the electric power industry, for developing standards that guide the
+                development and construction of equipment and systems, and for educating members of the industry and the
+                general public. IEEE PES MSIT has been very much active globally, working closely with the world leaders
+                to create sustainable energy resources.
+            </p>
+        </div>
+    </div>
+    <div class="excom-wrapper">
+        <div class="row specific-title">
+            <div class="col">
+                <h1>IEEE MSIT PES TEAM</h1>
+            </div>
+        </div>
+        <div class="row">
+            {% for member in members %}
+            <div class="col-md-4 m-auto">
+                <div class="excom-teams">
+
+                    <div class="excom-card align-items-center">
+                        {% if member.image %}
+                        <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                            {% endif %}><img src="{{member.image.url}}"></a>
+                        {% else %}
+                        <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                            {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
+                        {% endif %}
+                        <br>
+                        {{member.name}}
+                        <br>
+                        {{member.designation}}
+                        <br>
+                        {% if member.facebook %}
+                        <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+                        {% endif %}
+                        {% if member.linkedIn %}
+                        <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                        {% endif %}
+                        {% if member.email %}
+                        <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>{% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+{% block pageJS %}
+<script type="text/javascript" src="{% static 'js/specificEvent.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}
+{% include "navbar.html"%}
+{% endblock %}
+{% block title %}
+IEEE CS
+{% endblock %}
+{% block index %}
+<div class="container specific-wrapper">
+  <div class="row specific-image align-items-center">
+    <div class="col">
+      <img src="{% static 'images/ieee msit cs.png' %}" style="height:162px;width:214px" />
+    </div>
+  </div>
+  <div class="row specific-title">
+    <div class="col">
+      <h1>IEEE MSIT COMPUTER SOCIETY</h1>
+    </div>
+  </div>
+  <div class="row index-mission text-justify  justify-content-center">
+    <div class="col-10">
+      <p>
+        IEEE Computer Society is a part of the world’s leading membership organization dedicated to computer science and
+        technology. It is the trusted information, networking and career development source for a global community of
+        technology leaders which includes researchers, educators, software engineers, IT professionals, Employers and
+        students.
+      </p>
+      <p>
+        IEEE MSIT CS is a pragmatic society run by a young committee of extremely talented and diligent students of
+        Maharaja Surajmal Institute of Technology. It provides a platform to impart knowledge on computers and
+        technology through a variety of workshops, conferences and SIGs. It keeps you technically current and promotes
+        extensive in depth knowledge of the subject.
+      </p>
+      <p>
+        So if you are a tech-o-maniac and absolutely love the idea of learning more about it, we are here for you!
+      </p>
+    </div>
+  </div>
+  <div class="excom-wrapper">
+    <div class="row specific-title">
+      <div class="col">
+        <h1>IEEE MSIT CS TEAM</h1>
+      </div>
+    </div>
+    <div class="row">
+      {% for member in members %}
+      <div class="col-md-4 m-auto">
+        <div class="excom-teams">
+
+          <div class="excom-card align-items-center">
+            {% if member.image %}
+            <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %}><img
+                src="{{member.image.url}}"></a>
+            {% else %}
+            <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %}><img
+                src="{% static 'images/defaultDP.jpg' %}"></a>
+            {% endif %}
+            <br>
+            {{member.name}}
+            <br>
+            {{member.designation}}
+            <br>
+            {% if member.facebook %}
+            <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+            {% endif %}
+            {% if member.linkedIn %}
+            <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+            {% endif %}
+            {% if member.email %}
+            <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>{% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+{% block pageJS %}
+<script type="text/javascript" src="{% static 'js/specificEvent.js' %}"></script>
+{% endblock %}

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block navbar %}
-  {% include "navbar.html"%}
+{% include "navbar.html"%}
 {% endblock %}
 {% block title %}
-  ExCom@IEEE MSIT
+ExCom@IEEE MSIT
 {% endblock %}
 {% block index %}
 <div class="container excom-wrapper">
@@ -17,207 +17,256 @@
         <h2 class="excom-chapter">Advisory Board</h2>
       </div>
       <div class="row">
-        <div class="col">
+        {% for member in taMembers %}
+        <div class="col-md-4 m-auto">
           <div class="excom-teams">
-            {% for member in taMembers %}
-              <div class="excom-card align-items-center">
-                {% if member.image %}
-                  <img src="{{member.image.url}}">
-                {% else %}
-                  <img src="{% static 'images/defaultDP.jpg' %}">
-                {% endif %}
-                <br>
-                {{member.name}}
-                <br>
-                {{member.designation}}
-                <br>
-                {% if member.facebook %}
-                  <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
-                {% endif %}
-                {% if member.linkedIn %}
-                  <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                {% endif %}
-                {% if member.email %}
-                  <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
-                {% endif %}
-              </div>
-            {% endfor %}
+
+            <div class="excom-card align-items-center">
+              {% if member.image %}
+              <img src="{{member.image.url}}">
+              {% else %}
+              <img src="{% static 'images/defaultDP.jpg' %}">
+              {% endif %}
+              <br>
+              {{member.name}}
+              <br>
+              {{member.designation}}
+              <br>
+              {% if member.resume %}
+              <a href="{{ member.resume.url }}" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
+              {% endif %}
+              {% if member.facebook %}
+              <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+              {% endif %}
+              {% if member.linkedIn %}
+              <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+              {% endif %}
+              {% if member.email %}
+              <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+              {% endif %}
+            </div>
+
           </div>
         </div>
+        {% endfor %}
       </div>
 
       <div class="row justify-content-center">
-        <h2 class="excom-chapter">IEEE Main</h2>
+        <a href="/aboutUs">
+          <h2 class="excom-chapter" style="color: black">IEEE Main</h2>
+        </a>
       </div>
       <div class="row">
         <div class="col">
           <div class="excom-teams">
             {% for member in mainMembers %}
-              <div class="excom-card align-items-center">
-                {% if member.image %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
-                {% else %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
-                {% endif %}
-                <br>
-                {{member.name}}
-                <br>
-                {{member.designation}}
-                <br>
-                {% if member.facebook %}
-                  <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
-                {% endif %}
-                {% if member.linkedIn %}
-                  <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                {% endif %}
-                {% if member.email %}
-                  <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
-                {% endif %}
-              </div>
+            <div class="excom-card align-items-center">
+              {% if member.image %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{{member.image.url}}"></a>
+              {% else %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
+              {% endif %}
+              <br>
+              {{member.name}}
+              <br>
+              {{member.designation}}
+              <br>
+              {% if member.resume %}
+              <a href="{{ member.resume.url }}" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
+              {% endif %}
+              {% if member.facebook %}
+              <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+              {% endif %}
+              {% if member.linkedIn %}
+              <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+              {% endif %}
+              {% if member.email %}
+              <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+              {% endif %}
+            </div>
             {% endfor %}
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
-        <h2 class="excom-chapter">IEEE CS</h2>
+        <a href="compsoc">
+          <h2 class="excom-chapter" style="color: black">IEEE CS</h2>
+        </a>
       </div>
       <div class="row">
-        <div class="col">
+        {% for member in csMembers %}
+        <div class="col-md-4 m-auto">
           <div class="excom-teams">
-            {% for member in csMembers %}
-              <div class="excom-card align-items-center">
-                {% if member.image %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
-                {% else %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
-                {% endif %}
-                <br>
-                {{member.name}}
-                <br>
-                {{member.designation}}
-                <br>
-                {% if member.facebook %}
-                  <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
-                {% endif %}
-                {% if member.linkedIn %}
-                  <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                {% endif %}
-                {% if member.email %}
-                  <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
-                {% endif %}
-              </div>
-            {% endfor %}
+
+            <div class="excom-card align-items-center">
+              {% if member.image %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{{member.image.url}}"></a>
+              {% else %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
+              {% endif %}
+              <br>
+              {{member.name}}
+              <br>
+              {{member.designation}}
+              <br>
+              {% if member.resume %}
+              <a href="{{ member.resume.url }}" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
+              {% endif %}
+              {% if member.facebook %}
+              <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+              {% endif %}
+              {% if member.linkedIn %}
+              <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+              {% endif %}
+              {% if member.email %}
+              <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+              {% endif %}
+            </div>
+
           </div>
         </div>
+        {% endfor %}
       </div>
       <div class="row justify-content-center">
-        <h2 class="excom-chapter">IEEE MTTS</h2>
+        <a href="/ras">
+          <h2 class="excom-chapter" style="color: black">IEEE RAS</h2>
+        </a>
       </div>
       <div class="row">
-        <div class="col">
+        {% for member in rasMembers %}
+        <div class="col-md-4 m-auto">
           <div class="excom-teams">
-            {% for member in mttsMembers %}
-              <div class="excom-card align-items-center">
-                {% if member.image %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
-                {% else %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
-                {% endif %}
-                <br>
-                {{member.name}}
-                <br>
-                {{member.designation}}
-                <br>
-                {% if member.facebook %}
-                  <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
-                {% endif %}
-                {% if member.linkedIn %}
-                  <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                {% endif %}
-                {% if member.email %}
-                  <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
-                {% endif %}
-              </div>
-            {% endfor %}
+            <div class="excom-card align-items-center">
+              {% if member.image %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{{member.image.url}}"></a>
+              {% else %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
+              {% endif %}
+              <br>
+              {{member.name}}
+              <br>
+              {{member.designation}}
+              <br>
+              {% if member.resume %}
+              <a href="{{ member.resume.url }}" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
+              {% endif %}
+              {% if member.facebook %}
+              <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+              {% endif %}
+              {% if member.linkedIn %}
+              <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+              {% endif %}
+              {% if member.email %}
+              <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+              {% endif %}
+            </div>
+
           </div>
         </div>
+        {% endfor %}
       </div>
       <div class="row justify-content-center">
-        <h2 class="excom-chapter">IEEE PES</h2>
+        <a href="/pes">
+          <h2 class="excom-chapter" style="color: black">IEEE PES</h2>
+        </a>
       </div>
       <div class="row">
-        <div class="col">
+        {% for member in pesMembers %}
+        <div class="col-md-4 m-auto">
           <div class="excom-teams">
-            {% for member in pesMembers %}
-              <div class="excom-card align-items-center">
-                {% if member.image %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} > <img src="{{member.image.url}}"></a>
-                {% else %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
-                {% endif %}
-                <br>
-                {{member.name}}
-                <br>
-                {{member.designation}}
-                <br>
-                {% if member.facebook %}
-                  <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
-                {% endif %}
-                {% if member.linkedIn %}
-                  <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                {% endif %}
-                {% if member.email %}
-                  <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
-                {% endif %}
-              </div>
-            {% endfor %}
+
+            <div class="excom-card align-items-center">
+              {% if member.image %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %}>
+                <img src="{{member.image.url}}"></a>
+              {% else %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
+              {% endif %}
+              <br>
+              {{member.name}}
+              <br>
+              {{member.designation}}
+              <br>
+              {% if member.resume %}
+              <a href="{{ member.resume.url }}" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
+              {% endif %}
+              {% if member.facebook %}
+              <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+              {% endif %}
+              {% if member.linkedIn %}
+              <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+              {% endif %}
+              {% if member.email %}
+              <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+              {% endif %}
+            </div>
+
           </div>
         </div>
+        {% endfor %}
       </div>
       <div class="row justify-content-center">
-        <h2 class="excom-chapter">IEEE WIE</h2>
+        <a href="/wie">
+          <h2 class="excom-chapter" style="color: black">IEEE WIE</h2>
+        </a>
       </div>
       <div class="row">
-        <div class="col">
+        {% for member in wieMembers %}
+        <div class="col-md-4 m-auto">
           <div class="excom-teams">
-            {% for member in wieMembers %}
-              <div class="excom-card align-items-center">
-                {% if member.image %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{{member.image.url}}"></a>
-                {% else %}
-                  <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#" {% endif %} ><img src="{% static 'images/defaultDP.jpg' %}"></a>
-                {% endif %}
-                <br>
-                {{member.name}}
-                <br>
-                {{member.designation}}
-                <br>
-                {% if member.facebook %}
-                  <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
-                {% endif %}
-                {% if member.linkedIn %}
-                  <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                {% endif %}
-                {% if member.email %}
-                  <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
-                {% endif %}
-              </div>
-            {% endfor %}
+
+            <div class="excom-card align-items-center">
+              {% if member.image %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{{member.image.url}}"></a>
+              {% else %}
+              <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
+                {% endif %}><img src="{% static 'images/defaultDP.jpg' %}"></a>
+              {% endif %}
+              <br>
+              {{member.name}}
+              <br>
+              {{member.designation}}
+              <br>
+              {% if member.resume %}
+              <a href="{{ member.resume.url }}" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
+              {% endif %}
+              {% if member.facebook %}
+              <a href="{{member.facebook}}" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+              {% endif %}
+              {% if member.linkedIn %}
+              <a href="{{member.linkedIn}}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+              {% endif %}
+              {% if member.email %}
+              <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
+              {% endif %}
+            </div>
+
           </div>
         </div>
+        {% endfor %}
       </div>
     </div>
   </div>
 </div>
 {% endblock %}
 {% block footer %}
-  {% include "footer.html" %}
+{% include "footer.html" %}
 {% endblock %}
 {% block pageJS %}
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-     
-  <script type="text/javascript" src="{% static 'js/excom.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{% static 'js/excom.js' %}"></script>
 {% endblock %}

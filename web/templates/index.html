@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block navbar %}
-  {% include "navbar.html"%}
+{% include "navbar.html"%}
 {% endblock %}
 {% block title %}
-  IEEE MSIT
+IEEE MSIT
 {% endblock %}
 {% block index %}
 <div id="index" class="container-fluid">
@@ -18,13 +18,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="{% static 'images/team.jpeg' %}">
+            <img class="d-block w-100" src="{% static 'images/team201920.jpg' %}" alt="First slide" />
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="{% static 'images/orientation.jpg' %}" alt="Second slide">
+            <img class="d-block w-100" src="{% static 'images/felicitation.jpg' %}" alt="Second slide" />
           </div>
           <div class="carousel-item">
-              <img class="d-block w-100" src="{% static 'images/DSC_0032-min.JPG' %}" alt="Third slide">
+            <img class="d-block w-100" src="{% static 'images/ab.jpg' %}" alt="Third slide" />
           </div>
         </div>
       </div>
@@ -35,19 +35,28 @@
       <div class="col-10">
         <h1>Message From The Branch</h1>
         <p>
-          IEEE MSIT SB is an initiative to bring exposure to the members about the advancements in the technical field, build confidence and interaction with experts. It envisions to "Lead a wave of change" through its technical advents for the betterment of society.
+          IEEE MSIT SB is an initiative to bring exposure to the members about
+          the advancements in the technical field, build confidence and
+          interaction with experts. It envisions to "Lead a wave of change"
+          through its technical advents for the betterment of society.
         </p>
         <p>
-          Since it's inception in 2009, a team of conscientious and zealous IEEE volunteers, holding various positions of responsibility, work with utmost dedication to make each event a huge success.
+          Since it's inception in 2009, a team of conscientious and zealous IEEE
+          volunteers, holding various positions of responsibility, work with
+          utmost dedication to make each event a huge success.
         </p>
         <p>
-          IEEE MSIT SB works into building the college's biggest technical society for engineering, computing, and technology information. 
+          IEEE MSIT SB works into building the college's biggest technical
+          society for engineering, computing, and technology information.
         </p>
         <p>
-          It has served as an effective networking channel bringing together the the past and present members together who complement the other in collectively contributing to ideas and projects.
+          It has served as an effective networking channel bringing together the
+          the past and present members together who complement the other in
+          collectively contributing to ideas and projects.
         </p>
         <p>
-  ‎      IEEE MSIT SB has been subject to several upgrades and with each new development, it has            striven to reach closer to it's goals.
+          ‎ IEEE MSIT SB has been subject to several upgrades and with each new
+          development, it has striven to reach closer to it's goals.
         </p>
       </div>
     </div>
@@ -58,23 +67,23 @@
         </div>
         <div class="row index-chapter-images">
           <div class="col">
-            <a href="https://www.facebook.com/ieeecompsoc/" target="_blank">
-              <img src="{% static 'images/ieee msit cs.png' %}">
+            <a href="/compsoc">
+              <img src="{% static 'images/ieee msit cs.png' %}" />
             </a>
           </div>
           <div class="col">
-            <a href="https://www.facebook.com/MTTSMsit" target="_blank">
-              <img src="{% static 'images/MTTS_Color-min.png' %}">
+            <a href="/ras">
+              <img src="{% static 'images/RAS_MSIT.png' %}" style="height: 100%; width: 100%" />
             </a>
           </div>
           <div class="col">
-            <a href="https://www.facebook.com/ieeepesmsit/" target="_blank">
-              <img src="{% static 'images/PES_MSIT_Colr.png' %}">
+            <a href="/pes">
+              <img src="{% static 'images/PES_MSIT_Colr.png' %}" />
             </a>
           </div>
           <div class="col">
-            <a href="https://www.facebook.com/ieeewiemsit" target="_blank">
-              <img src="{% static 'images/wie_transparent_minified.png' %}">
+            <a href="/wie">
+              <img src="{% static 'images/wie_transparent_minified.png' %}" />
             </a>
           </div>
         </div>
@@ -90,9 +99,9 @@
           <div class="col-10">
             <div class="index-slick-news">
               {% for news in allNews %}
-                <h4>
-                  {{news.content}}
-                </h4>
+              <h4>
+                {{ news.content }}
+              </h4>
               {% endfor %}
             </div>
           </div>
@@ -100,11 +109,9 @@
       </div>
     </div>
     {% endif %}
+  </div>
+  {% endblock %} {% block footer %} {% include "footer.html" %} {% endblock %}
+  {% block pageJS %}
+  <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+  {% endblock %}
 </div>
-{% endblock %}
-{% block footer %}
-  {% include "footer.html" %}
-{% endblock %}
-{% block pageJS %}
-<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
-{% endblock %}
