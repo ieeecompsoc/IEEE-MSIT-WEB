@@ -57,9 +57,9 @@ ExCom@IEEE MSIT
         </a>
       </div>
       <div class="row">
-        <div class="col">
+        {% for member in mainMembers %}
+        <div class="col-md-4 m-auto">
           <div class="excom-teams">
-            {% for member in mainMembers %}
             <div class="excom-card align-items-center">
               {% if member.image %}
               <a {% if member.resume %} href="{{ member.resume.url }}" target="_new" {% else %} href="#"
@@ -86,9 +86,9 @@ ExCom@IEEE MSIT
               <a href="mailto:{{member.email}}"><i class="fas fa-at fa-1x"></i></a>
               {% endif %}
             </div>
-            {% endfor %}
           </div>
         </div>
+        {% endfor %}
       </div>
       <div class="row justify-content-center">
         <a href="compsoc">
