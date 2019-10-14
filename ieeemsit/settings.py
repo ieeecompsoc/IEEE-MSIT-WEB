@@ -146,7 +146,7 @@ CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery
 CKEDITOR_CONFIGS = {
     'default': {
         'skin': 'moono',
-        #'skin': 'office2013',
+        # 'skin': 'office2013',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}
+  {% include "navbar.html"%}
+{% endblock %}
+{% block title %}
+  {{ blog.blog_title }}
+{% endblock %}
+{% block index %}
+<div class="container specific-wrapper">
+  <div class="row specific-image align-items-center">
+    <div class="col">
+      {% if blogData.image %}
+        <img src="{{ blogData.image.url }}" class="mt-2">
+      {% endif %}
+    </div>
+  </div>
+  <div class="row specific-title">
+    <div class="col">
+      <h1>{{ blogData.blog_title }}</h1>
+    </div>
+  </div>
+  <div class="row specific-date">
+    <div class="col">
+        <h4>{{ blogData.blog_date|date:"d N Y" }}</h4>
+    </div>
+    </div>
+  <div class="row specific-title ml-6">
+    <div class="col text-secondary">
+        <h5><i>By: {{ blogData.blog_by }}</i></h5>
+    </div>
+    </div>
+  <div class="row specific-description">
+    <div class="col">
+      {{ blogData.blog_content|safe }}
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock %}
+{% block pageJS %}
+  <script type="text/javascript" src="{% static 'js/specificEvent.js' %}"></script>
+{% endblock %}
