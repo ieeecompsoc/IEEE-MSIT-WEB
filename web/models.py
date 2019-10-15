@@ -26,6 +26,16 @@ class Event(models.Model):
     def __str__(self):
         return "%s" % (self.event_title)
 
+class Blog(models.Model):
+    blog_title = models.CharField(max_length=100, verbose_name = 'Title')
+    blog_content = models.TextField(verbose_name = 'Content')
+    image = models.ImageField(upload_to='blogs/', blank=False, null=True)
+    blog_date = models.DateTimeField(verbose_name= 'Created on:', default= timezone.now)
+    blog_by = models.CharField(max_length=100, verbose_name='By:')
+
+    def __str__(self):
+        return "%s" % (self.blog_title)
+
 class Chapter(models.Model):
     chapter = models.CharField(max_length=100, verbose_name="Student Chapter")
 

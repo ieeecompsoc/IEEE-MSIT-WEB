@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Event,Execom,Chapter,Designation,Achievment,Sig,Update,Team
+from .models import Event,Execom,Chapter,Designation,Achievment,Sig,Update,Team,Blog
 
 def index(request):
     news = Update.objects.order_by('-create_date')[:5]
@@ -31,6 +31,16 @@ def specificEvent(request, event_id, slug):
     pastEvents = Event.objects.filter(event_date__lt=timezone.now())
     context = {'eventData':eventData, 'futureEvents': futureEvents, 'pastEvents' : pastEvents}
     return render(request, 'specificEvent.html', context)
+
+def blogs(request):
+    blogList = Blog.objects.order_by('-blog_date')
+    context = {'blogList': blogList}
+    return render(request, 'blogs.html', context)
+
+def specificBlog(request, blog_id, slug):
+    blogData = get_object_or_404(Blog, pk=blog_id)
+    context = {'blogData': blogData}
+    return render(request, 'specificBlog.html', context)
 
 def execom(request):
     allMembers = Execom.objects.all()

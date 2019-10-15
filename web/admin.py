@@ -3,11 +3,15 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Event,Chapter,Designation,Execom,Achievment,Sig, Update, SigMentor, Team
+from .models import Event,Chapter,Designation,Execom,Achievment,Sig, Update, SigMentor, Team, Blog
 
 class EventAdmin(admin.ModelAdmin):
     list_display=('event_title','event_date','image')
     list_filter=['event_date']
+
+class BlogAdmin(admin.ModelAdmin):
+    list_display=('blog_title', 'blog_date', 'image', 'blog_by')
+    list_filter=['blog_date']
 
 class ExecomAdmin(admin.ModelAdmin):
     def image_tag(self, obj):
@@ -24,6 +28,7 @@ class AchievmentAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Event, EventAdmin)
+admin.site.register(Blog, BlogAdmin)
 admin.site.register(Execom,ExecomAdmin)
 admin.site.register(Chapter)
 admin.site.register(Designation)
