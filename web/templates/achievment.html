@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 {% block navbar %}
-  {% include "navbar.html"%}
+{% include "navbar.html"%}
 {% endblock %}
 {% block title %}
-  About Us
+Achievement
 {% endblock %}
 {% block index %}
 <div class="container achievment-wrapper">
-{% if achievments %}
+  {% if achievments %}
   <div class="row justify-content-center">
     <div class="col-10 justify-content-center">
       <h1>Achievments</h1>
       <ul>
         {% for achievment in achievments %}
-          <li>{{achievment.achievment|safe}}</li>
+        <li>{{achievment.achievment|safe}}</li>
         {% endfor %}
       </ul>
     </div>
   </div>
-{% else %}
+  {% else %}
   <h3>There are currently no achievments.</h3>
-{% endif %}
+  {% endif %}
 </div>
 {% endblock %}
 {% block footer %}
-  {% include "footer.html" %}
+{% include "footer.html" %}
 {% endblock %}
