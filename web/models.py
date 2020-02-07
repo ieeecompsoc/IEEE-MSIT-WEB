@@ -8,6 +8,12 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
+class Visitor(models.Model):
+    name = models.CharField(max_length=300, verbose_name='Counter Name')
+    counter = models.DecimalField(max_digits=10, decimal_places=0,verbose_name="Visitor Counter",default=1)
+    def __str__(self):
+        return self.name
+
 class Update(models.Model):
     content = models.CharField(max_length=300, verbose_name='Latest News')
     create_date = models.DateTimeField(verbose_name = 'Created on:', default = timezone.now)
@@ -58,6 +64,7 @@ class Execom(models.Model):
     email = models.EmailField(blank=True, null=True, unique=True)
     resume = models.FileField(upload_to='execom/', blank=True, null=True)
     create_date = models.DateTimeField(verbose_name = 'Created on:', default = timezone.now)
+    page_rank = models.DecimalField(max_digits=2, decimal_places=0,verbose_name="Frontend Rank",blank=False,default=1)
 
     def __str__(self):
         return "%s" % (self.name)
