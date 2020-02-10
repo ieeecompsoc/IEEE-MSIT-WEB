@@ -18,5 +18,6 @@ urlpatterns = [
     path(r'compsoc',views.cs,name='cs'),
     path(r'pes',views.pes,name="pes"),
     path(r'ras',views.ras,name="ras"),
-    path(r'wie',views.wie,name="wie")
+    path(r'wie',views.wie,name="wie"),
+    path(r'tpe20',views.tpe,name="wie"),
 ]
