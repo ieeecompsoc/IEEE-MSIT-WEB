@@ -1,4 +1,11 @@
 @charset "UTF-8";
+
+/* Font-Family */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
 /* Variables */
 
 $ieee-blue: #006790;
@@ -271,78 +278,60 @@ body {
 
 .events-container {
   .events-category {
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 1em;
     text-align: center;
     text-decoration: underline;
     text-decoration-color: $ieee-blue;
-    margin-top: 1em;
   }
 
-  .events-card {
-    box-shadow: 0px 0px 15px #aaa;
-    margin: 1.5em auto;
+  .card {
+    border: 2px solid #d3d3d3;
+  }
 
-    // height: 190px;
-    .events-image {
-      padding-left: 0;
-      padding-right: 0;
-      overflow: hidden;
+  .card-body {
+    font-family: 'Comfortaa', cursive;
+  }
 
-      img {
-        height: auto;
-        width: 100%;
-        min-height: 13em;
-        max-height: 13em;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
+  .card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-    .events-content {
-      min-height: 12em;
-      padding-bottom: 10px;
+  .overlay {
+    position: absolute;
+    bottom: 50% ;
+    left: 0 ;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+  .card:hover .overlay {
+    bottom: 0;
+    height: 100%;
+  }
 
-      .events-title-date {
-        padding-top: 0.5em;
-        color: $ieee-blue;
+  .event-description {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    margin: auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
 
-        h5 {
-          font-weight: bolder;
-          margin: 0;
-        }
-      }
-
-      .events-hr {
-        margin: 0.5em 0;
-        border-top-color: rgba(0, 0, 0, 0.2);
-      }
-
-      .events-description {
-        color: #333;
-        line-height: 1.4em;
-        font-size: 0.9em;
-        min-height: 5em;
-        max-height: 6em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .events-readmore {
-        .btn-primary {
-          background-color: $ieee-blue;
-          border-color: $ieee-blue;
-          -webkit-appearance: initial;
-
-          &:focus,
-          &:hover,
-          &:active {
-            background-color: $ieee-blue;
-            border-color: $ieee-blue;
-            outline-color: transparent;
-            box-shadow: none;
-          }
-        }
-      }
-    }
+  .card-footer {
+    background-color: #076790;
   }
 }
 
@@ -351,57 +340,33 @@ body {
 /* CSS for specificEvent.html begins */
 /* Use prefix specific-* */
 
-.specific-wrapper {
-  .specific-image {
-    text-align: center;
+// 
 
-    img {
-      height: auto;
-      width: 30em;
-      max-width: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+
+  .event-image {
+    width: 500px;
+    margin: auto;
+    border: 3px solid #d3d3d3;
   }
 
-  .specific-title {
+  .event-details {
+    margin-top: 1em;
     h1 {
+      font-family: 'Open Sans', sans-serif;
+    }
+    p {
       margin-top: 1em;
-      text-align: center;
-      text-decoration: underline;
-      text-decoration-style: dashed;
-      text-decoration-color: $ieee-blue;
+      font-family: 'Comfortaa', cursive;
     }
   }
 
-  .specific-date {
-    h4 {
-      text-align: center;
-
-    }
+  .specific-buttons {
+    align-self: center;
   }
 
-  .specific-description {
-    text-align: justify;
-    font-size: 0.9em;
-  }
-
-  .specific-report {
-    .btn-primary {
-      background-color: $ieee-blue;
-      border-color: $ieee-blue;
-      -webkit-appearance: initial;
-
-      &:focus,
-      &:hover,
-      &:active {
-        background-color: $ieee-blue;
-        border-color: $ieee-blue;
-        outline-color: transparent;
-        box-shadow: none;
-      }
-    }
-  }
 }
 
 /* CSS for specificEvent.html ends*/
