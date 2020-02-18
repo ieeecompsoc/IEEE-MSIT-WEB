@@ -20,7 +20,7 @@ class ExecomAdmin(admin.ModelAdmin):
         except:
             return None;
     image_tag.short_description = 'Image'
-    list_display=('name','image_tag','chapter','designation')
+    list_display=('name','image_tag','chapter','designation','page_rank')
     list_filter=['chapter']
 
 class AchievmentAdmin(admin.ModelAdmin):
