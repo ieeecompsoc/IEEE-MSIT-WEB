@@ -31,7 +31,7 @@ class Blog(models.Model):
     blog_content = models.TextField(verbose_name = 'Content')
     image = models.ImageField(upload_to='blogs/', blank=False, null=True)
     blog_date = models.DateTimeField(verbose_name= 'Created on:', default= timezone.now)
-    blog_by = models.CharField(max_length=100, verbose_name='By:')
+    blog_by = models.CharField(max_length=100, verbose_name='Written By:')
 
     def __str__(self):
         return "%s" % (self.blog_title)

@@ -6,62 +6,52 @@
 {% block title %}
 SIGs
 {% endblock %}
-{%block index %}
+{% block index %}
 
 {{sig.members}}
-<div class="container events-container">
-  <div class="row">
-    <div class="col events-category">
-      <h2>SIGs COMING SOON</h2>
-    </div>
-  </div>
-  <div class="row text-center">
-    <div class="col m-auto">
-      <h3>Register yourself as a mentor <a href="http://bit.ly/IEEESIG2019">here</a>. </h3>
-    </div>
-  </div>
-  <!-- <div class="events-past">
-    {% for s in sig %}
-    <div class="row events-card">
-      <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
-        <img src="{{s.image.url}}">
-      </div>
-      <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
-        <div class="row events-title-date">
-          <div class="col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
-            <h5>
-              {{s.title}}
-            </h5>
-          </div>
-          <div class="col-12 col-lg-4 col-sm-4 col-md-4">
-            <h5>
-              <p>{{s.timings}}</p>
-            </h5>
-          </div>
-        </div>
-        <hr class="events-hr">
+<section id="sig" class="pb-5">
+    <div class="container">
         <div class="row">
-          <div class="col events-description">
-            {{s.sig_description|truncatewords:60}}
-          </div>
+            {% for s in sig %}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{{s.image.url}}" alt="card image"></p>
+                                    <h4 class="card-title">{{s.title}}</h4>
+                                    <p class="card-text">{{s.sig_description|truncatewords:18}}</p>
+                                    <p>
+                                      <strong>Mentors:</strong>&nbsp;
+                                        {{ s.members.all|join:', '}}
+                                    </p>
+                                    <b>{{s.timings}}</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">{{s.title}}</h4>
+                                    <p class="card-text">{{s.sig_description}}</p>
+                                    <b>*** Mentors Contact ***</b>
+                                    <p style="font-size:14px;">
+                                        {% for mentor in s.members.all %}
+                                            {{mentor.name}},&nbsp;{{mentor.contact}} </br>
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        <hr class="events-hr">
-        <div class="row">
-          <div class="col events-readmore">
-            <p>
-              <strong>Mentors: </strong>
-              {% for mentor in s.members.all %}
-              {{mentor.name}}
-              <span style="font-style: italic;">{{mentor.contact}}</span> &nbsp;&nbsp;
-              {% endfor %}
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-    {% endfor %}
-  </div> -->
-</div>
+</section>
+
 {% endblock %}
 {% block footer %}
 {% include "footer.html" %}

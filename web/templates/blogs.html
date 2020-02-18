@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block navbar %}
-  {% include "navbar.html"%}
+{% include "navbar.html"%}
 {% endblock %}
 {% block title %}
-  Blogs
+Blogs
 {% endblock %}
 {% block index %}
 <div class="container events-container">
@@ -16,41 +16,48 @@
       </div>
     </div>
     {% for blog in blogList %}
-      <div class="row events-card">
-        <div class="col-12 col-lg-3 col-sm-3 col-md-3">
-          <img src="{{blog.image.url}}">
-        </div>
-        <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
-            <div class="row events-title-date">
-                <blockquote class="blockquote text-center col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
-                <p class="mb-0">{{ blog.blog_title|capfirst }}</p>
-                <footer class="blockquote-footer"><cite title="Source Title">{{ blog.blog_by }}</cite></footer>
-                </blockquote>
-                <div class="col-12 col-lg-4 col-sm-4 col-md-4">
-                    <h5>
-                        {{ blog.blog_date|date:"d N Y" }}
-                    </h5>
-                </div>
-            </div>
-          <hr class="events-hr">
-          <div class="row">
-            <div class="col events-description">
-              {{blog.blog_content|truncatechars:300|capfirst}}
-            </div>
+    <div class="row events-card">
+      <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
+        <img src="{{blog.image.url}}">
+      </div>
+      <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
+        <div class="row events-title-date">
+          <blockquote class="blockquote text-center col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
+            <p class="mb-0">{{ blog.blog_title|capfirst }}</p>
+            <footer class="blockquote-footer"><cite title="Source Title">{{ blog.blog_by }}</cite></footer>
+          </blockquote>
+          <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+            <h5>
+              {{ blog.blog_date|date:"d N Y" }}
+            </h5>
           </div>
-          <hr class="events-hr">
-          <div class="row">
-            <div class="col events-readmore">
-              <a type="button" class="btn btn-primary" href="/blogs/{{blog.id}}/{{blog.blog_title|slugify}}" target="_blank">Read More</a>
-            </div>
+        </div>
+        <hr class="events-hr">
+        <div class="row">
+          <div class="col events-description">
+            {{blog.blog_content|truncatechars:300|capfirst}}
+          </div>
+        </div>
+        <hr class="events-hr">
+        <div class="row">
+          <div class="col events-readmore">
+            <a type="button" class="btn btn-primary" href="/blogs/{{blog.id}}/{{blog.blog_title|slugify}}"
+              target="_blank">Read More</a>
           </div>
         </div>
       </div>
+    </div>
     {% endfor %}
+  </div>
+  {% else %}
+  <div class="row">
+    <div class="col events-category">
+      <h2>BLOGS COMING SOON</h2>
+    </div>
   </div>
   {% endif %}
   {% endblock %}
 </div>
 {% block footer %}
-  {% include "footer.html" %}
+{% include "footer.html" %}
 {% endblock %}

@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block navbar %}
-  {% include "navbar.html"%}
+{% include "navbar.html"%}
 {% endblock %}
 {% block title %}
-  {{ blog.blog_title }}
+{{ blogData.blog_title }}
 {% endblock %}
 {% block index %}
 <div class="container specific-wrapper">
   <div class="row specific-image align-items-center">
     <div class="col">
       {% if blogData.image %}
-        <img src="{{ blogData.image.url }}" class="mt-2">
+      <img src="{{ blogData.image.url }}" class="mt-2">
       {% endif %}
     </div>
   </div>
@@ -22,14 +22,14 @@
   </div>
   <div class="row specific-date">
     <div class="col">
-        <h4>{{ blogData.blog_date|date:"d N Y" }}</h4>
+      <h4>{{ blogData.blog_date|date:"d N Y" }}</h4>
     </div>
-    </div>
+  </div>
   <div class="row specific-title ml-6">
     <div class="col text-secondary">
-        <h5><i>By: {{ blogData.blog_by }}</i></h5>
+      <h5><i>By: {{ blogData.blog_by }}</i></h5>
     </div>
-    </div>
+  </div>
   <div class="row specific-description">
     <div class="col">
       {{ blogData.blog_content|safe }}
@@ -39,8 +39,8 @@
 </div>
 {% endblock %}
 {% block footer %}
-  {% include "footer.html" %}
+{% include "footer.html" %}
 {% endblock %}
 {% block pageJS %}
-  <script type="text/javascript" src="{% static 'js/specificEvent.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/specificEvent.js' %}"></script>
 {% endblock %}

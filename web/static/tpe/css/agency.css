@@ -39,7 +39,12 @@ a.active {
   color: #004466;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -66,7 +71,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-.btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus,
+.btn-primary.focus {
   color: white;
   background-color: #004466;
   border-color: #00111a;
@@ -78,23 +84,45 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #003d5c;
 }
 
-.btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+.btn-primary:active,
+.btn-primary.active,
+.open>.btn-primary.dropdown-toggle {
   color: white;
   background-color: #004466;
   border-color: #003d5c;
 }
 
-.btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
+
+.btn-primary:active:hover,
+.btn-primary:active:focus,
+.btn-primary:active.focus,
+.btn-primary.active:hover,
+.btn-primary.active:focus,
+.btn-primary.active.focus,
+.open>.btn-primary.dropdown-toggle:hover,
+.open>.btn-primary.dropdown-toggle:focus,
+.open>.btn-primary.dropdown-toggle.focus {
   color: white;
   background-color: #002c42;
   border-color: #00111a;
 }
 
-.btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+
+.btn-primary:active,
+.btn-primary.active,
+.open>.btn-primary.dropdown-toggle {
   background-image: none;
 }
 
-.btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
+.btn-primary.disabled:hover,
+.btn-primary.disabled:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled]:hover,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary:hover,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary.focus {
   background-color: #006699;
   border-color: #006699;
 }
@@ -116,7 +144,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px 40px;
 }
 
-.btn-xl:focus, .btn-xl.focus {
+.btn-xl:focus,
+.btn-xl.focus {
   color: white;
   background-color: #004466;
   border-color: #00111a;
@@ -128,23 +157,44 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #003d5c;
 }
 
-.btn-xl:active, .btn-xl.active, .open > .btn-xl.dropdown-toggle {
+.btn-xl:active,
+.btn-xl.active,
+.open>.btn-xl.dropdown-toggle {
   color: white;
   background-color: #004466;
   border-color: #003d5c;
 }
 
-.btn-xl:active:hover, .btn-xl:active:focus, .btn-xl:active.focus, .btn-xl.active:hover, .btn-xl.active:focus, .btn-xl.active.focus, .open > .btn-xl.dropdown-toggle:hover, .open > .btn-xl.dropdown-toggle:focus, .open > .btn-xl.dropdown-toggle.focus {
+.btn-xl:active:hover,
+.btn-xl:active:focus,
+.btn-xl:active.focus,
+.btn-xl.active:hover,
+.btn-xl.active:focus,
+.btn-xl.active.focus,
+.open>.btn-xl.dropdown-toggle:hover,
+.open>.btn-xl.dropdown-toggle:focus,
+.open>.btn-xl.dropdown-toggle.focus {
   color: white;
   background-color: #002c42;
   border-color: #00111a;
 }
 
-.btn-xl:active, .btn-xl.active, .open > .btn-xl.dropdown-toggle {
+
+.btn-xl:active,
+.btn-xl.active,
+.open>.btn-xl.dropdown-toggle {
   background-image: none;
 }
 
-.btn-xl.disabled:hover, .btn-xl.disabled:focus, .btn-xl.disabled.focus, .btn-xl[disabled]:hover, .btn-xl[disabled]:focus, .btn-xl[disabled].focus, fieldset[disabled] .btn-xl:hover, fieldset[disabled] .btn-xl:focus, fieldset[disabled] .btn-xl.focus {
+.btn-xl.disabled:hover,
+.btn-xl.disabled:focus,
+.btn-xl.disabled.focus,
+.btn-xl[disabled]:hover,
+.btn-xl[disabled]:focus,
+.btn-xl[disabled].focus,
+fieldset[disabled] .btn-xl:hover,
+fieldset[disabled] .btn-xl:focus,
+fieldset[disabled] .btn-xl.focus {
   background-color: #006699;
   border-color: #006699;
 }
@@ -164,7 +214,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
 }
 
-.navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus, .navbar-custom .navbar-brand:active, .navbar-custom .navbar-brand.active {
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
   color: #004466;
 }
 
@@ -181,7 +235,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
 }
 
-.navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus {
+ 
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
   background-color: #006699;
 }
 
@@ -193,19 +249,20 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-.navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus {
   color: #006699;
   outline: none;
 }
 
-.navbar-custom .navbar-nav > .active > a {
+.navbar-custom .navbar-nav>.active>a {
   border-radius: 0;
   color: white;
   background-color: #006699;
 }
 
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
+.navbar-custom .navbar-nav>.active>a:hover,
+.navbar-custom .navbar-nav>.active>a:focus {
   color: white;
   background-color: #004466;
 }
@@ -218,12 +275,15 @@ h1, h2, h3, h4, h5, h6 {
     transition: padding 0.3s;
     border: none;
   }
+
   .navbar-custom .navbar-brand {
     font-size: 2em;
     -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
     transition: all 0.3s;
   }
-  .navbar-custom .navbar-nav > .active > a {
+
+  .navbar-custom .navbar-nav>.active>a {
     border-radius: 3px;
   }
 }
@@ -233,6 +293,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #222222;
     padding: 10px 0;
   }
+  
   .navbar-custom.affix .navbar-brand {
     font-size: 1.5em;
   }
@@ -240,8 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
   height: 100vh;
-  background-image: url("../../img/front/6.JPG"), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
-  background-image: url("../../img/front/6.JPG"), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: url("../../images/6.JPG"), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -288,6 +348,7 @@ header .intro-text .btn-xl {
     padding-top: 200px;
     padding-bottom: 200px;
   }
+  
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
@@ -295,6 +356,7 @@ header .intro-text .btn-xl {
     line-height: 40px;
     margin-bottom: 25px;
   }
+  
   header .intro-text .intro-heading {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
@@ -303,6 +365,7 @@ header .intro-text .btn-xl {
     line-height: 75px;
     margin-bottom: 50px;
   }
+  
   header .intro-text .btn {
     font-size: auto;
     width: auto;
@@ -433,22 +496,24 @@ section h3.section-subheading {
   margin-left: -1.5px;
 }
 
-.timeline > li {
+.timeline>li {
   margin-bottom: 50px;
   position: relative;
   min-height: 50px;
 }
 
-.timeline > li:before, .timeline > li:after {
+.timeline>li:before,
+.timeline>li:after {
   content: " ";
   display: table;
 }
 
-.timeline > li:after {
+
+.timeline>li:after {
   clear: both;
 }
 
-.timeline > li .timeline-panel {
+.timeline>li .timeline-panel {
   width: 100%;
   float: right;
   padding: 0 20px 0 100px;
@@ -456,21 +521,21 @@ section h3.section-subheading {
   text-align: left;
 }
 
-.timeline > li .timeline-panel:before {
+.timeline>li .timeline-panel:before {
   border-left-width: 0;
   border-right-width: 15px;
   left: -15px;
   right: auto;
 }
 
-.timeline > li .timeline-panel:after {
+.timeline>li .timeline-panel:after {
   border-left-width: 0;
   border-right-width: 14px;
   left: -14px;
   right: auto;
 }
 
-.timeline > li .timeline-image {
+.timeline>li .timeline-image {
   left: 0;
   margin-left: 0;
   width: 80px;
@@ -484,33 +549,33 @@ section h3.section-subheading {
   text-align: center;
 }
 
-.timeline > li .timeline-image h4 {
+.timeline>li .timeline-image h4 {
   font-size: 10px;
   margin-top: 12px;
   line-height: 14px;
 }
 
-.timeline > li.timeline-inverted > .timeline-panel {
+.timeline>li.timeline-inverted>.timeline-panel {
   float: right;
   text-align: left;
   padding: 0 20px 0 100px;
 }
 
-.timeline > li.timeline-inverted > .timeline-panel:before {
+.timeline>li.timeline-inverted>.timeline-panel:before {
   border-left-width: 0;
   border-right-width: 15px;
   left: -15px;
   right: auto;
 }
 
-.timeline > li.timeline-inverted > .timeline-panel:after {
+.timeline>li.timeline-inverted>.timeline-panel:after {
   border-left-width: 0;
   border-right-width: 14px;
   left: -14px;
   right: auto;
 }
 
-.timeline > li:last-child {
+.timeline>li:last-child {
   margin-bottom: 0;
 }
 
@@ -523,8 +588,8 @@ section h3.section-subheading {
   text-transform: none;
 }
 
-.timeline .timeline-body > p,
-.timeline .timeline-body > ul {
+.timeline .timeline-body>p,
+.timeline .timeline-body>ul {
   margin-bottom: 0;
 }
 
@@ -532,28 +597,33 @@ section h3.section-subheading {
   .timeline:before {
     left: 50%;
   }
-  .timeline > li {
+
+  .timeline>li {
     margin-bottom: 100px;
     min-height: 100px;
   }
-  .timeline > li .timeline-panel {
+
+  .timeline>li .timeline-panel {
     width: 41%;
     float: left;
     padding: 0 20px 20px 30px;
     text-align: right;
   }
-  .timeline > li .timeline-image {
+
+  .timeline>li .timeline-image {
     width: 100px;
     height: 100px;
     left: 50%;
     margin-left: -50px;
   }
-  .timeline > li .timeline-image h4 {
+  
+  .timeline>li .timeline-image h4 {
     font-size: 13px;
     margin-top: 16px;
     line-height: 18px;
   }
-  .timeline > li.timeline-inverted > .timeline-panel {
+
+  .timeline>li.timeline-inverted>.timeline-panel {
     float: right;
     text-align: left;
     padding: 0 30px 20px 20px;
@@ -561,43 +631,51 @@ section h3.section-subheading {
 }
 
 @media (min-width: 992px) {
-  .timeline > li {
+  .timeline>li {
     min-height: 150px;
   }
-  .timeline > li .timeline-panel {
+
+  .timeline>li .timeline-panel {
     padding: 0 20px 20px;
   }
-  .timeline > li .timeline-image {
+
+  .timeline>li .timeline-image {
     width: 150px;
     height: 150px;
     margin-left: -75px;
   }
-  .timeline > li .timeline-image h4 {
+
+  .timeline>li .timeline-image h4 {
     font-size: 18px;
     margin-top: 30px;
     line-height: 26px;
   }
-  .timeline > li.timeline-inverted > .timeline-panel {
+
+  .timeline>li.timeline-inverted>.timeline-panel {
     padding: 0 20px 20px;
   }
 }
 
 @media (min-width: 1200px) {
-  .timeline > li {
+  .timeline>li {
     min-height: 170px;
   }
-  .timeline > li .timeline-panel {
+
+  .timeline>li .timeline-panel {
     padding: 0 20px 20px 100px;
   }
-  .timeline > li .timeline-image {
+
+  .timeline>li .timeline-image {
     width: 170px;
     height: 170px;
     margin-left: -85px;
   }
-  .timeline > li .timeline-image h4 {
+
+  .timeline>li .timeline-image h4 {
     margin-top: 40px;
   }
-  .timeline > li.timeline-inverted > .timeline-panel {
+
+  .timeline>li.timeline-inverted>.timeline-panel {
     padding: 0 100px 20px 20px;
   }
 }
@@ -625,13 +703,11 @@ section h3.section-subheading {
 aside.clients img {
   margin: 50px auto;
   height: 100px;
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 aside.clients img:hover {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 section#contact {
@@ -657,6 +733,7 @@ section#contact .map {
   section#contact .text {
     text-align: left;
   }
+  
   section#contact .map {
     margin-top: 0;
   }
@@ -697,10 +774,13 @@ ul.social-buttons li a {
   color: white;
   outline: none;
   -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
   background-color: #006699;
 }
 
@@ -805,10 +885,6 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 ::selection {
   text-shadow: none;
   background: #006699;
-}
-
-img::-moz-selection {
-  background: transparent;
 }
 
 img::selection {
