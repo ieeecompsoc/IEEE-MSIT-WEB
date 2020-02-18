@@ -10,67 +10,95 @@
 <div class="container events-container">
   {% if eventList %}
   {% if futureEvents %}
-  <div class="row">
-    <div class="col events-category">
-      <h2>Upcoming Events</h2>
+  <div class="events-future">
+    <div class="row">
+      <div class="col events-category">
+        <h2>Upcoming Events</h2>
+      </div>
     </div>
-  </div>
-  <div class="card-columns">
     {% for event in futureEvents %}
-    <div class="card" style="width: 450;">
-      <img class="card-img-top" src={{event.image.url}} alt="Card image">
-      <div class="overlay">
-        <p class="event-description">
-          {{event.event_description|truncatechars:300|capfirst}}
-        </p>
-        <div class="card-footer">
-          <a type="button" class="btn btn-light" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
-          {% if event.register_url %}
-          <a type="button" class="btn btn-primary"  href="{{ event.register_url }}"  target="_new" >Register Now</a>
-          {% endif %}
+      <div class="row events-card">
+        <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
+          <img src="{{event.image.url}}">
+        </div>
+        <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
+          <div class="row events-title-date">
+            <div class="col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
+              <h5>
+                {{ event.event_title|capfirst }}
+              </h5>
+            </div>
+            <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+              <h5>
+                {{ event.event_date|date:"d N Y" }}
+              </h5>
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-description">
+              {{event.event_description|truncatewords:60|capfirst}}
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-readmore">
+              <a type="button" class="btn btn-primary" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
+              {% if event.register_url %}
+              <a type="button" class="btn btn-primary"  href="{{ event.register_url }}"  target="_new" >Register Now</a>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card-body">
-        <h4 class="card-title">
-          {{ event.event_title|capfirst }}
-        </h4>
-        <div class="card-text"><p>{{ event.event_date|date:"d N Y" }}</p></div>
-      </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
   </div>
   {% endif %}
   {% if pastEvents %}
+  <div class="events-past">
     <div class="row">
       <div class="col events-category">
         <h2>Past Events</h2>
       </div>
     </div>
-    <div class="card-columns">
-      {% for event in pastEvents %}
-      <div class="card" style="width: 450;">
-        <img class="card-img-top" src={{event.image.url}} alt="Card image">
-        <div class="overlay">
-          <p class="event-description">
-            {{event.event_description|truncatechars:300|capfirst}}
-          </p>
-          <div class="card-footer">
-            <a type="button" class="btn btn-light" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
-            {% if event.report %}
-            <a type="button" class="btn btn-light"  href="{{ event.report.url }}"  target="_new" >Get Report</a>
-            {% endif %}
-          </div>
+    {% for event in pastEvents %}
+      <div class="row events-card">
+        <div class="col-12 col-lg-3 col-sm-3 col-md-3 events-image">
+          <img src="{{event.image.url}}">
         </div>
-        <div class="card-body">
-          <h4 class="card-title">
-            {{ event.event_title|capfirst }}
-          </h4>
-          <div class="card-text"><p>{{ event.event_date|date:"d N Y" }}</p></div>
+        <div class="col-12 col-lg-9 col-sm-9 col-md-9 events-content">
+          <div class="row events-title-date">
+            <div class="col-12 col-lg-8 col-sm-7 col-md-8 align-items-center">
+              <h5>
+                {{ event.event_title|capfirst }}
+              </h5>
+            </div>
+            <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+              <h5>
+                {{ event.event_date|date:"d N Y" }}
+              </h5>
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-description">
+              {{event.event_description|truncatechars:300|capfirst}}
+            </div>
+          </div>
+          <hr class="events-hr">
+          <div class="row">
+            <div class="col events-readmore">
+              <a type="button" class="btn btn-primary" href="/events/{{event.id}}/{{event.event_title|slugify}}" target="_blank">Read More</a>
+              {% if event.report %}
+              <a type="button" class="btn btn-primary"  href="{{ event.report.url }}"  target="_new" >Get Report</a>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     {% endfor %}
-    </div>
-  {% endif %} 
+  </div>
+  {% endif %}
   {% else %}
     <h1>There are currently no events. Please check again later. We are preparing something resourceful for you</h1>
   {% endif %}

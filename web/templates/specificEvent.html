@@ -7,22 +7,40 @@
   {{ eventData.event_title }}
 {% endblock %}
 {% block index %}
-<div class="container jumbotron mt-3">
-  <img src="{{ eventData.image.url }}" alt="event-image" class="event-image">
-  <div class="event-details">
-    <h1>{{ eventData.event_title }}</h1>
-    <h3>{{ eventData.event_date|date:"d N Y" }}</h3>
-    <p>{{ eventData.event_description|safe }}</p>
+<div class="container specific-wrapper">
+  <div class="row specific-image align-items-center">
+    <div class="col">
+      {% if eventData.image %}
+        <img src="{{ eventData.image.url }}">
+      {% endif %}
+    </div>
   </div>
-  <div class="specific-buttons card-footer">
+  <div class="row specific-title">
+    <div class="col">
+      <h1>{{ eventData.event_title }}</h1>
+    </div>
+  </div>
+  <div class="row specific-date">
+    <div class="col">
+      <h4>{{ eventData.event_date|date:"d N Y" }}</h4>
+    </div>
+  </div>
+  <div class="row specific-description">
+    <div class="col">
+      {{ eventData.event_description|safe }}
+    </div>
+  </div>
+  <div class="col specific-buttons">
+    <br>
     {% if eventData in pastEvents and eventData.report %}
-    <a type="button" class="btn btn-primary" href="{{eventData.report.url}}"  >Get Report</a>
-  {% endif %}
+      <a type="button" class="btn btn-primary" href="{{eventData.report.url}}"  >Get Report</a>
+    {% endif %}
 
-  {% if eventData in futureEvents and eventData.register_url %}
-    <a type="button" class="btn btn-primary"  href="{{ eventData.register_url }}"  target="_new" >Register Now</a>
-  {% endif %}
+    {% if eventData in futureEvents and eventData.register_url %}
+      <a type="button" class="btn btn-primary"  href="{{ eventData.register_url }}"  target="_new" >Register Now</a>
+    {% endif %}
   </div>
+
 </div>
 {% endblock %}
 {% block footer %}
