@@ -49,37 +49,37 @@ def execom(request):
 	mainMembers = []    #list containing queryset for all pageRanks for a chapter
 	mainMembersMaxRank = 3  #maximum pagerank for the chapter
 	for pageRank in range(1,mainMembersMaxRank+1):
-		mainMembers_ranked = Execom.objects.filter(chapter__chapter__contains="Main",page_rank=pageRank).order_by('page_rank')
+		mainMembers_ranked = Execom.objects.filter(chapter__chapter__contains="Main",page_rank=pageRank).order_by('page_rank','-create_date')
 		mainMembers.append(mainMembers_ranked)
 	
 	csMembers = []
 	csMembersMaxRank = 5
 	for pageRank in range(1,csMembersMaxRank+1):
-		csMembers_ranked = Execom.objects.filter(chapter__chapter__contains="CS",page_rank=pageRank).order_by('page_rank')
+		csMembers_ranked = Execom.objects.filter(chapter__chapter__contains="CS",page_rank=pageRank).order_by('page_rank','-create_date')
 		csMembers.append(csMembers_ranked)
 
 	rasMembers = []
 	rasMembersMaxRank = 5
 	for pageRank in range(1,rasMembersMaxRank+1):
-		rasMembers_ranked = Execom.objects.filter(chapter__chapter__contains="RAS",page_rank=pageRank).order_by('page_rank')
+		rasMembers_ranked = Execom.objects.filter(chapter__chapter__contains="RAS",page_rank=pageRank).order_by('page_rank','-create_date')
 		rasMembers.append(rasMembers_ranked)
 
 	pesMembers = []
 	pesMembersMaxRank = 5
 	for pageRank in range(1,pesMembersMaxRank+1):
-		pesMembers_ranked = Execom.objects.filter(chapter__chapter__contains="PES",page_rank=pageRank).order_by('page_rank')
+		pesMembers_ranked = Execom.objects.filter(chapter__chapter__contains="PES",page_rank=pageRank).order_by('page_rank','-create_date')
 		pesMembers.append(pesMembers_ranked)
 
 	wieMembers = []
 	wieMembersMaxRank = 5
 	for pageRank in range(1,wieMembersMaxRank+1):
-		wieMembers_ranked = Execom.objects.filter(chapter__chapter__contains="WIE",page_rank=pageRank).order_by('page_rank')
+		wieMembers_ranked = Execom.objects.filter(chapter__chapter__contains="WIE",page_rank=pageRank).order_by('page_rank','-create_date')
 		wieMembers.append(wieMembers_ranked)
 
 	taMembers = []
 	taMembersMaxRank = 5
 	for pageRank in range(1,wieMembersMaxRank+1):
-		taMembers_ranked = Execom.objects.filter(chapter__chapter__contains="TA",page_rank=pageRank).order_by('page_rank')
+		taMembers_ranked = Execom.objects.filter(chapter__chapter__contains="TA",page_rank=pageRank).order_by('page_rank','-create_date')
 		taMembers.append(taMembers_ranked)
 
 	context = {'allMembers':allMembers,'csMembers':csMembers,'rasMembers':rasMembers,'pesMembers':pesMembers,'wieMembers':wieMembers,'mainMembers':mainMembers,'taMembers':taMembers}
@@ -113,21 +113,21 @@ def team(request):
 	return render(request, 'team.html', context)
 
 def cs(request):
-	csMembers = Execom.objects.filter(chapter__chapter__contains="CS").order_by('-create_date')
+	csMembers = Execom.objects.filter(chapter__chapter__contains="CS").order_by('page_rank','-create_date')
 	context = {'members':csMembers}
 	return render(request,'cs.html',context)
 
 def pes(request):
-	pesMembers = Execom.objects.filter(chapter__chapter__contains="PES").order_by('-create_date')
+	pesMembers = Execom.objects.filter(chapter__chapter__contains="PES").order_by('page_rank','-create_date')
 	context = {'members':pesMembers}
 	return render(request,'pes.html',context)
 
 def ras(request):
-	rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS").order_by('-create_date')
+	rasMembers = Execom.objects.filter(chapter__chapter__contains="RAS").order_by('page_rank','-create_date')
 	context = {'members':rasMembers}
 	return render(request,'ras.html',context)
 
 def wie(request):
-	wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE").order_by('-create_date')
+	wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE").order_by('page_rank','-create_date')
 	context = {'members':wieMembers}
 	return render(request,'wie.html',context)

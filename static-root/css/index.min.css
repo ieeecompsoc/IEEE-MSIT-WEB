@@ -305,7 +305,6 @@ body {
 }
 .specific-wrapper .specific-description {
   text-align: justify;
-<<<<<<< 68414f15184fde419124de683d46b3eead54dd04
   font-size: 0.9em;
 }
 .specific-wrapper .specific-report .btn-primary {
@@ -314,13 +313,6 @@ body {
   -webkit-appearance: initial;
 }
 .specific-wrapper .specific-report .btn-primary:focus, .specific-wrapper .specific-report .btn-primary:hover, .specific-wrapper .specific-report .btn-primary:active {
-=======
-  font-size: 0.9em; }
-.specific-wrapper .specific-buttons .btn-primary {
-<<<<<<< HEAD
->>>>>>> mail-btn added
-=======
->>>>>>> a16332f7b1432be6bec2a0f296d27b85a6108143
   background-color: #006790;
   border-color: #006790;
   outline-color: transparent;
@@ -404,17 +396,41 @@ body {
 /* Use prefix achievment-* */
 /* CSS for team begins */
 /* Use prefix team- */
-.team-wrapper h1 {
+.team-wrapper .team-title {
   margin-top: 1em;
   text-align: center;
-  text-decoration: underline !important;
+  text-decoration: underline;
   text-decoration-style: solid;
   text-decoration-color: #006790;
 }
-.team-wrapper .container {
+.team-wrapper .team-container {
   min-height: 60vh;
   width: 80%;
   margin: 0 auto;
+}
+.team-wrapper .team-card {
+  min-width: 280px;
+}
+.team-wrapper .team-image {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+  align-self: center;
+}
+.team-wrapper .team-member-name {
+  text-align: center;
+}
+.team-wrapper .team-card-line {
+  border-right: 1px solid black;
+}
+.team-wrapper .team-card-line a {
+  color: inherit;
+}
+.team-wrapper .team-align {
+  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 @media only screen and (max-width: 800px) {
