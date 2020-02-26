@@ -296,9 +296,6 @@ body {
 .specific-wrapper .specific-title h1 {
   margin-top: 1em;
   text-align: center;
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  text-decoration-color: #006790;
 }
 .specific-wrapper .specific-date h4 {
   text-align: center;
