@@ -32,6 +32,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blogs/', blank=False, null=True)
     blog_date = models.DateTimeField(verbose_name= 'Created on:', default= timezone.now)
     blog_by = models.CharField(max_length=100, verbose_name='Written By:')
+    htmlData = models.TextField(help_text="HTML data to be executed as is.",blank=True)
 
     def __str__(self):
         return "%s" % (self.blog_title)
