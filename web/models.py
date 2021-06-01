@@ -49,12 +49,20 @@ class Designation(models.Model):
     def __str__(self):
         return "%s" % (self.designation)
 
+class Branch(models.Model):
+    branch = models.CharField(max_length=100)
+
+    def __str__(self):
+        return "%s" % (self.branch)
+
 class Execom(models.Model):
     name = models.CharField(max_length = 100, verbose_name="Full Name")
     image = models.ImageField(upload_to='execom/', blank=True, null=True)
     chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
     designation = models.ForeignKey(Designation, on_delete=models.CASCADE)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
     facebook = models.URLField(blank=True, null=True)
+    insta = models.URLField(blank=True, null=True)
     linkedIn = models.URLField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True, unique=True)
     resume = models.FileField(upload_to='execom/', blank=True, null=True)
