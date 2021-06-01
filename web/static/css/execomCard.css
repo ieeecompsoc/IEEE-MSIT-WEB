@@ -1,0 +1,62 @@
+#team h1 {
+    font-size: 36px;
+    color: #555;
+    font-weight: bold;
+}
+
+#team h3 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+#team i {
+    font-size: 26px;
+    color: #555;
+}
+
+#team svg {
+    font-size: 26px;
+    color: #555;
+}
+
+#team p {
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+#team .card {
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #00478F;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+#team .hi:hover{
+    color: black;
+}
+
+#team .card:hover {
+    background: #006790;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px #00478F;
+}
+
+#team .card:hover h3,
+#team .card:hover i,
+#team .card:hover svg {
+    color: #fff;
+}
+#team .card:hover a {
+    color:white !important;
+}
+
+#team img{
+    min-width: 12rem;
+    height: 14rem;
+    object-fit: cover;
+}
