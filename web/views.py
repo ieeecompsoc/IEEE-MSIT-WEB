@@ -3,6 +3,10 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
+# HttpResponse,HttpResponseRedirect,
+from django.http import JsonResponse
+import json
+from django.views.decorators.csrf import csrf_exempt
 from .models import Event,Execom,Chapter,Designation,Achievment,Sig,Update,Team,Blog
 
 def index(request):
@@ -45,13 +49,13 @@ def specificBlog(request, blog_id, slug):
 def execom(request):
 	allMembers = Execom.objects.all()
 	#the below filter goes to Execom - Chapter from there it goes to Chapter - chapter where it finally searches the string.
-	
+
 	mainMembers = []    #list containing queryset for all pageRanks for a chapter
 	mainMembersMaxRank = 3  #maximum pagerank for the chapter
 	for pageRank in range(1,mainMembersMaxRank+1):
 		mainMembers_ranked = Execom.objects.filter(chapter__chapter__contains="Main",page_rank=pageRank).order_by('page_rank','-create_date')
 		mainMembers.append(mainMembers_ranked)
-	
+
 	csMembers = []
 	csMembersMaxRank = 5
 	for pageRank in range(1,csMembersMaxRank+1):
@@ -131,3 +135,33 @@ def wie(request):
 	wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE").order_by('page_rank','-create_date')
 	context = {'members':wieMembers}
 	return render(request,'wie.html',context)
+
+@csrf_exempt
+def addExecom(request):
+    data = request.POST
+    if 'key' in data and data['key']=='TempWayToAddData':
+        member = Execom()
+        if 'name' in data:
+            member.name = data['name']
+        if 'image' in data:
+            member.image = request.FILES['image']
+        if 'chapter' in data:
+            member.chapter_id = int(data['chapter'])
+        if 'designation' in data:
+            member.designation_id = int(data['designation'])
+        if 'branch' in data:
+            member.branch_id = int(data['branch'])
+        if 'facebook' in data:
+            member.facebook = data['facebook']
+        if 'insta' in data:
+            member.insta = data['insta']
+        if 'linkedIn' in data:
+            member.linkedIn = data['linkedIn']
+        if 'email' in data:
+            member.email = data['email']
+        if 'resume' in data:
+            member.resume = request.FILES['resume']
+        member.save()
+        response = {"success":True}
+    response = {"success":False}
+    return JsonResponse(response)

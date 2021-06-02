@@ -19,5 +19,6 @@ urlpatterns = [
     path(r'pes',views.pes,name="pes"),
     path(r'ras',views.ras,name="ras"),
     path(r'wie',views.wie,name="wie"),
+    path(r'addExecom',views.addExecom,name='addExecom'),
     # path(r'tpe20',views.tpe,name="tpe"),
 ]
