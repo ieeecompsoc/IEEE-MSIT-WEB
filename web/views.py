@@ -135,33 +135,3 @@ def wie(request):
 	wieMembers = Execom.objects.filter(chapter__chapter__contains="WIE").order_by('page_rank','-create_date')
 	context = {'members':wieMembers}
 	return render(request,'wie.html',context)
-
-@csrf_exempt
-def addExecom(request):
-    data = request.POST
-    if 'key' in data and data['key']=='TempWayToAddData':
-        member = Execom()
-        if 'name' in data:
-            member.name = data['name']
-        if 'image' in data:
-            member.image = request.FILES['image']
-        if 'chapter' in data:
-            member.chapter_id = int(data['chapter'])
-        if 'designation' in data:
-            member.designation_id = int(data['designation'])
-        if 'branch' in data:
-            member.branch_id = int(data['branch'])
-        if 'facebook' in data:
-            member.facebook = data['facebook']
-        if 'insta' in data:
-            member.insta = data['insta']
-        if 'linkedIn' in data:
-            member.linkedIn = data['linkedIn']
-        if 'email' in data:
-            member.email = data['email']
-        if 'resume' in data:
-            member.resume = request.FILES['resume']
-        member.save()
-        response = {"success":True}
-    response = {"success":False}
-    return JsonResponse(response)
