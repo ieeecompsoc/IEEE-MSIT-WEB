@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost', '*', 'ieeemsit.a2hosted.com', '139.59.79.194']
 
 INSTALLED_APPS = [
     'web',
+    'urlshortner',
     'ckeditor',
     'ckeditor_uploader',
     'django.contrib.admin',
