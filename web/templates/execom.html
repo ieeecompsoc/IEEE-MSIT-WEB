@@ -7,6 +7,7 @@
 ExeCom@IEEE MSIT
 {% endblock %}
 {% block index %}
+{% load dictKey %}
 <style>
     .m-auto{
       padding-bottom: 5vh;
@@ -20,12 +21,11 @@ ExeCom@IEEE MSIT
       <div class="row justify-content-center">
         <h1 class="excom-title">ExeCom 2020-21</h1>
       </div><br>
-
       <div class="row justify-content-center">
         <h2 class="excom-chapter">Advisory Board</h2>
       </div><br>
 
-      {% for rankedMembers in taMembers %}
+      {% for rankedMembers in records.TA %}
         <div class="row justify-content-center">
           {% for member in rankedMembers %}
           <div class="col-lg-3 col-md-3 pt-1">
@@ -90,7 +90,8 @@ ExeCom@IEEE MSIT
           <h2 class="excom-chapter" style="color: black">IEEE Main</h2><br>
         </a>
       </div>
-      {% for rankedMembers in mainMembers %}
+      
+      {% for rankedMembers in records|dictKey:'IEEE Main' %}
         <div class="row justify-content-center">
           {% for member in rankedMembers %}
           <div class="col-lg-3 col-md-3 pt-1">
@@ -155,7 +156,7 @@ ExeCom@IEEE MSIT
           <h2 class="excom-chapter" style="color: black">IEEE CS</h2><br>
         </a>
       </div>
-      {% for rankedMembers in csMembers %}
+      {% for rankedMembers in records|dictKey:'IEEE CS' %}
         <div class="row justify-content-center">
           {% for member in rankedMembers %}
           <div class="col-lg-3 col-md-3 pt-1">
@@ -219,7 +220,7 @@ ExeCom@IEEE MSIT
           <h2 class="excom-chapter" style="color: black">IEEE RAS</h2><br>
         </a>
       </div>
-      {% for rankedmembers in rasMembers %}
+      {% for rankedmembers in records|dictKey:'IEEE RAS' %}
         <div class="row justify-content-center">
           {% for member in rankedmembers %}
           <div class="col-lg-3 col-md-3 pt-1">
@@ -284,7 +285,7 @@ ExeCom@IEEE MSIT
           <h2 class="excom-chapter" style="color: black">IEEE PES</h2><br>
         </a>
       </div>
-      {% for RKDmember in pesMembers %}
+      {% for RKDmember in records|dictKey:'IEEE PES' %}
         <div class="row justify-content-center">
           {% for member in RKDmember %}
           <div class="col-lg-3 col-md-3 pt-1">
@@ -349,7 +350,7 @@ ExeCom@IEEE MSIT
           <h2 class="excom-chapter" style="color: black">IEEE WiE</h2><br>
         </a>
       </div>
-      {% for RKDmember in wieMembers %}
+      {% for RKDmember in records|dictKey:'IEEE WIE' %}
         <div class="row justify-content-center">
           {% for member in RKDmember %}
           <div class="col-lg-3 col-md-3 pt-1">
@@ -408,6 +409,399 @@ ExeCom@IEEE MSIT
         </div><br>
       {% endfor %}
       <br>
+      
+      <div class="row justify-content-center">
+        <a href="/pes">
+          <h2 class="excom-chapter" style="color: black">IEEE Design Committee</h2><br>
+        </a>
+      </div>
+      {% for RKDmember in records|dictKey:'IEEE Design Committee' %}
+        <div class="row justify-content-center">
+          {% for member in RKDmember %}
+          <div class="col-lg-3 col-md-3 pt-1">
+              <div class="card h-80">
+                  <div class="card-body">
+                      {% if member.image %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{{member.image.url}}">
+                      {% else %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{% static 'images/defaultDP.jpg' %}">
+                      {% endif %}
+
+                      <h3>{{member.name}}</h3>
+                      <h5>{{member.designation}}</h5>
+                      <p>{{member.branch}}
+                          <br/>
+                      {% if member.email %}
+                      <a href="mailto:{{member.email}}">{{member.email}}</a>
+                      {% endif %}
+                      </p>
+                      <div class=" hi d-flex flex-row justify-content-center">
+                          {% if member.facebook %}
+                          <div class="p-3">
+                              <a href="{{member.facebook}}" target="_blank">
+                                  <i class="fab fa-facebook-f"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.linkedIn %}
+                          <div class="p-3">
+                              <a href="{{member.linkedIn}}" target="_blank">
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.insta %}
+                          <div class="p-3">
+                              <a href="{{member.insta}}" target="_blank">
+                                  <i class="fab fa-instagram"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                      {% if member.resume %}
+                        <div class="p-3">
+                            <a href="{{ member.resume.url }}" target="_blank">
+                                <i class="fas fa-file"></i>
+                            </a>
+                          </div>
+                      {% endif %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div><br>
+      {% endfor %}
+      <br>
+      
+      <div class="row justify-content-center">
+        <a href="/pes">
+          <h2 class="excom-chapter" style="color: black">IEEE Projects Committee</h2><br>
+        </a>
+      </div>
+      {% for RKDmember in records|dictKey:'IEEE Projects Committee' %}
+        <div class="row justify-content-center">
+          {% for member in RKDmember %}
+          <div class="col-lg-3 col-md-3 pt-1">
+              <div class="card h-80">
+                  <div class="card-body">
+                      {% if member.image %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{{member.image.url}}">
+                      {% else %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{% static 'images/defaultDP.jpg' %}">
+                      {% endif %}
+
+                      <h3>{{member.name}}</h3>
+                      <h5>{{member.designation}}</h5>
+                      <p>{{member.branch}}
+                          <br/>
+                      {% if member.email %}
+                      <a href="mailto:{{member.email}}">{{member.email}}</a>
+                      {% endif %}
+                      </p>
+                      <div class=" hi d-flex flex-row justify-content-center">
+                          {% if member.facebook %}
+                          <div class="p-3">
+                              <a href="{{member.facebook}}" target="_blank">
+                                  <i class="fab fa-facebook-f"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.linkedIn %}
+                          <div class="p-3">
+                              <a href="{{member.linkedIn}}" target="_blank">
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.insta %}
+                          <div class="p-3">
+                              <a href="{{member.insta}}" target="_blank">
+                                  <i class="fab fa-instagram"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                      {% if member.resume %}
+                        <div class="p-3">
+                            <a href="{{ member.resume.url }}" target="_blank">
+                                <i class="fas fa-file"></i>
+                            </a>
+                          </div>
+                      {% endif %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div><br>
+      {% endfor %}
+      <br>
+      
+      <div class="row justify-content-center">
+        <a href="/pes">
+          <h2 class="excom-chapter" style="color: black">IEEE Editorial Committee</h2><br>
+        </a>
+      </div>
+      {% for RKDmember in records|dictKey:'IEEE Editorial Committee' %}
+        <div class="row justify-content-center">
+          {% for member in RKDmember %}
+          <div class="col-lg-3 col-md-3 pt-1">
+              <div class="card h-80">
+                  <div class="card-body">
+                      {% if member.image %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{{member.image.url}}">
+                      {% else %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{% static 'images/defaultDP.jpg' %}">
+                      {% endif %}
+
+                      <h3>{{member.name}}</h3>
+                      <h5>{{member.designation}}</h5>
+                      <p>{{member.branch}}
+                          <br/>
+                      {% if member.email %}
+                      <a href="mailto:{{member.email}}">{{member.email}}</a>
+                      {% endif %}
+                      </p>
+                      <div class=" hi d-flex flex-row justify-content-center">
+                          {% if member.facebook %}
+                          <div class="p-3">
+                              <a href="{{member.facebook}}" target="_blank">
+                                  <i class="fab fa-facebook-f"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.linkedIn %}
+                          <div class="p-3">
+                              <a href="{{member.linkedIn}}" target="_blank">
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.insta %}
+                          <div class="p-3">
+                              <a href="{{member.insta}}" target="_blank">
+                                  <i class="fab fa-instagram"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                      {% if member.resume %}
+                        <div class="p-3">
+                            <a href="{{ member.resume.url }}" target="_blank">
+                                <i class="fas fa-file"></i>
+                            </a>
+                          </div>
+                      {% endif %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div><br>
+      {% endfor %}
+      <br>
+      
+      <div class="row justify-content-center">
+        <a href="/pes">
+          <h2 class="excom-chapter" style="color: black">IEEE Program Committee</h2><br>
+        </a>
+      </div>
+      {% for RKDmember in records|dictKey:'IEEE Program Committee' %}
+        <div class="row justify-content-center">
+          {% for member in RKDmember %}
+          <div class="col-lg-3 col-md-3 pt-1">
+              <div class="card h-80">
+                  <div class="card-body">
+                      {% if member.image %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{{member.image.url}}">
+                      {% else %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{% static 'images/defaultDP.jpg' %}">
+                      {% endif %}
+
+                      <h3>{{member.name}}</h3>
+                      <h5>{{member.designation}}</h5>
+                      <p>{{member.branch}}
+                          <br/>
+                      {% if member.email %}
+                      <a href="mailto:{{member.email}}">{{member.email}}</a>
+                      {% endif %}
+                      </p>
+                      <div class=" hi d-flex flex-row justify-content-center">
+                          {% if member.facebook %}
+                          <div class="p-3">
+                              <a href="{{member.facebook}}" target="_blank">
+                                  <i class="fab fa-facebook-f"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.linkedIn %}
+                          <div class="p-3">
+                              <a href="{{member.linkedIn}}" target="_blank">
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.insta %}
+                          <div class="p-3">
+                              <a href="{{member.insta}}" target="_blank">
+                                  <i class="fab fa-instagram"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                      {% if member.resume %}
+                        <div class="p-3">
+                            <a href="{{ member.resume.url }}" target="_blank">
+                                <i class="fas fa-file"></i>
+                            </a>
+                          </div>
+                      {% endif %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div><br>
+      {% endfor %}
+      <br>
+      
+      <div class="row justify-content-center">
+        <a href="/pes">
+          <h2 class="excom-chapter" style="color: black">IEEE Publicity Committee</h2><br>
+        </a>
+      </div>
+      {% for RKDmember in records|dictKey:'IEEE Publicity Committee' %}
+        <div class="row justify-content-center">
+          {% for member in RKDmember %}
+          <div class="col-lg-3 col-md-3 pt-1">
+              <div class="card h-80">
+                  <div class="card-body">
+                      {% if member.image %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{{member.image.url}}">
+                      {% else %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{% static 'images/defaultDP.jpg' %}">
+                      {% endif %}
+
+                      <h3>{{member.name}}</h3>
+                      <h5>{{member.designation}}</h5>
+                      <p>{{member.branch}}
+                          <br/>
+                      {% if member.email %}
+                      <a href="mailto:{{member.email}}">{{member.email}}</a>
+                      {% endif %}
+                      </p>
+                      <div class=" hi d-flex flex-row justify-content-center">
+                          {% if member.facebook %}
+                          <div class="p-3">
+                              <a href="{{member.facebook}}" target="_blank">
+                                  <i class="fab fa-facebook-f"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.linkedIn %}
+                          <div class="p-3">
+                              <a href="{{member.linkedIn}}" target="_blank">
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.insta %}
+                          <div class="p-3">
+                              <a href="{{member.insta}}" target="_blank">
+                                  <i class="fab fa-instagram"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                      {% if member.resume %}
+                        <div class="p-3">
+                            <a href="{{ member.resume.url }}" target="_blank">
+                                <i class="fas fa-file"></i>
+                            </a>
+                          </div>
+                      {% endif %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div><br>
+      {% endfor %}
+      <br>
+      
+      <div class="row justify-content-center">
+        <a href="/pes">
+          <h2 class="excom-chapter" style="color: black">IEEE Outreach Committee</h2><br>
+        </a>
+      </div>
+      {% for RKDmember in records|dictKey:'IEEE Outreach Committee' %}
+        <div class="row justify-content-center">
+          {% for member in RKDmember %}
+          <div class="col-lg-3 col-md-3 pt-1">
+              <div class="card h-80">
+                  <div class="card-body">
+                      {% if member.image %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{{member.image.url}}">
+                      {% else %}
+                      <img class="img-fouild rounded w-75 mb-3"
+                          src="{% static 'images/defaultDP.jpg' %}">
+                      {% endif %}
+
+                      <h3>{{member.name}}</h3>
+                      <h5>{{member.designation}}</h5>
+                      <p>{{member.branch}}
+                          <br/>
+                      {% if member.email %}
+                      <a href="mailto:{{member.email}}">{{member.email}}</a>
+                      {% endif %}
+                      </p>
+                      <div class=" hi d-flex flex-row justify-content-center">
+                          {% if member.facebook %}
+                          <div class="p-3">
+                              <a href="{{member.facebook}}" target="_blank">
+                                  <i class="fab fa-facebook-f"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.linkedIn %}
+                          <div class="p-3">
+                              <a href="{{member.linkedIn}}" target="_blank">
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                          {% if member.insta %}
+                          <div class="p-3">
+                              <a href="{{member.insta}}" target="_blank">
+                                  <i class="fab fa-instagram"></i>
+                              </a>
+                          </div>
+                          {% endif %}
+                      {% if member.resume %}
+                        <div class="p-3">
+                            <a href="{{ member.resume.url }}" target="_blank">
+                                <i class="fas fa-file"></i>
+                            </a>
+                          </div>
+                      {% endif %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div><br>
+      {% endfor %}
+      <br>
+      
+      
+      
     </div>
   </div>
 </div>
