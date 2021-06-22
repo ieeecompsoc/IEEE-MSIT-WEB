@@ -1,0 +1,24 @@
+{% extends 'hello.html' %}
+{% block body %}
+
+<center>
+    <div class="container" style="margin-top: 70px;">
+        <div class="container shadow p-4 bg-info" style="background-color: #006790 !important;">
+            <div class="row">
+                <div class="col-12 text-center py-2">
+                    <h3 style="color: #fff;">Compile your attendance</h3>
+                </div>
+                <div class="col-10 col-sm-10 col-md-6 mx-auto" >
+                    <div class="num">
+                        <form method="POST" action="\attendancecompiler">
+                            {%csrf_token%}
+                            <input type="number" placeholder="Number of Files" name="num" id="numfield" class="form-control" required>
+                            <input type="submit" id="numsub" value="Next" class="btn btn-light mt-3">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+{% endblock body %}

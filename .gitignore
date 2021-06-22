@@ -87,6 +87,7 @@ celerybeat-schedule
 venv/
 ENV/
 envieee/
+env/
 
 # Spyder project settings
 .spyderproject
@@ -112,5 +113,5 @@ uploads/
 
 # Bhai ki files
 .sass-cache/
-
+ieeemsit/dbconfig.py
 Thumbs.db
