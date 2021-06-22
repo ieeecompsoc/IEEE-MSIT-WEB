@@ -1,0 +1,23 @@
+{% extends 'hello.html' %}
+{% block body %}
+<div class="container" style="margin-top:20px ;">
+    <center><h1>Please upload files here...</h1></center>
+</div>
+
+<div class="fileform" style="margin-top: 20px;">
+    <form method="POST" action="attendancecompiler/file" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="hidden" name="num" value="{{no}}">
+        {%for num in n%}
+        <div class="container">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                <input type="file" class="form-control" name="{{num}}" required>
+            </div>
+        </div>
+            {%endfor%}
+            <center><input type="submit" id="sub" value="Compile" class="btn btn-info"></center>
+    </form>
+</div>
+
+{% endblock body %}

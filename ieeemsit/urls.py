@@ -23,6 +23,7 @@ urlpatterns = [
     path(r'', include('web.urls')),
     path(r's/', include('urlshortner.urls')),
     path(r'ckeditor', include('ckeditor_uploader.urls')),
+    path(r'attendancecompiler',include('attendance.urls')),
 ]
 # if settings.DEBUG:
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
