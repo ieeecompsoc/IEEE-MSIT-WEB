@@ -4,7 +4,7 @@
     <center><h1>Please upload files here...</h1></center>
 </div>
 
-<div class="fileform" style="margin-top: 20px;">
+<div class="fileform" style="margin-top: 20px;" >
     <form method="POST" action="attendancecompiler/file" enctype="multipart/form-data">
         {%csrf_token%}
         <input type="hidden" name="num" value="{{no}}">
@@ -16,7 +16,7 @@
             </div>
         </div>
             {%endfor%}
-            <center><input type="submit" id="sub" value="Compile" class="btn btn-info"></center>
+            <center><input type="submit" id="sub" value="Compile" class="btn btn-info" style="background-color: #006790 !important;color: #fff;"></center>
     </form>
 </div>
 
