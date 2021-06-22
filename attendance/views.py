@@ -25,6 +25,7 @@ def file(request):
             data=request.FILES[str(i)]
             fs = FileSystemStorage()
             name = fs.save(data.name,data)
+            path = fs.path(name)
             f = pd.read_csv('uploads/'+name, sep='\t', encoding='UTF-16')
             names = f['Full Name'].unique()
             add = [name for name in names if name not in attendees]
@@ -41,6 +42,7 @@ def file(request):
             p.append(pre)
             date = f['Timestamp'][0].split(',')[0]
             head.append(date)
+            fs.delete(path)
         attendance['1Name'] = attendees
         i=0
         for date in head[1:]:
