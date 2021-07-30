@@ -1,0 +1,22 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h3 class="text-center mb-5">Edit Original Url</h3>
+
+        <form method='POST'>
+            {% csrf_token %}
+            <div class="form-group row justify-content-center">
+                    <label for="original" class="col-sm-2 col-form-label">Original Url:</label>
+                <div class="col-sm-7 pl-0">
+                    <input type="text" class="form-control" name="original", placeholder="{{ url.original_url }}" value="{{ url.original_url }}">
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>   
+{% endblock content %}

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'web',
     'attendance',
     'urlshortner',
+    'crispy_forms',
     'ckeditor',
     'ckeditor_uploader',
     'django.contrib.admin',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -137,6 +139,9 @@ USE_TZ = True
 STATIC_URL = '/static-root/'
 STATIC_ROOT = dbconfig.static_root_path
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static-root')]
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
 
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = dbconfig.media_root_path
