@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from urlshortner.views import dashboard,generate,function
+from urlshortner.views import dashboard,generate_url,remove_url,edit_url
 from django.conf.urls import url
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
-    path(r'', dashboard, name="dashboard"),
-    path(r'generate/', generate, name="generate"),
-    path(r'<str:query>/', dashboard, name="dashboard"),
-    url(r'^delete/(?P<u_id>[0-9]+)/$', function, name='delete_view'),
+    path(r'', dashboard, name='dashboard'),
+    path(r'generate/', generate_url, name='generate_url'),
+    path(r'<str:query>/', dashboard, name='dashboard'),
+    url(r'^delete/(?P<u_id>[0-9]+)/$', remove_url, name='remove_url'),
+    path('edit/<u_id>', edit_url, name='edit_url'),
+    path('login', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout')
 ]
