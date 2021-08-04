@@ -19,8 +19,12 @@
       background-color: whitesmoke;
     }
     .ieeecs{
-      font-size: 3vh;
+      font-size: 2.5vh;
       font-weight: 500;
+      padding-left: 0.5rem;
+    }
+    .cslogo{
+      height: 5vh;
     }
     nav{
       background-color: white !important;
@@ -32,7 +36,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="{%static 'img/cs.png'%}" alt="" height="34px"><h class="ieeecs"><img src="{%static 'img/ieee.png'%}" alt="" height="34px"><h class="ieeecs">  IEEE MSIT Computer Society</h></a>
+      <a class="navbar-brand" href="#"><img class="cslogo" src="{%static 'img/cs.png'%}" alt=""><span class="ieeecs">IEEE MSIT Computer Society</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

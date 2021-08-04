@@ -6,25 +6,24 @@ from django.core.validators import URLValidator
 import random, string
 
 @login_required
-def dashboard(request, query=None):
-    if not query or query is None:
-        urls = shorturl.objects.all()
-        return render(request, 'dashboard.html', { 'urls' : urls })
-    else:
+def dashboard(request):
+    urls = shorturl.objects.all()
+    return render(request, 'dashboard.html', { 'urls' : urls })
+    
+def event(request, query):
+    try:
+        check=shorturl.objects.get(short_query=query)
+        check.visits=check.visits+1
+        check.save()
+        url_to_redirect=check.original_url
+        validate = URLValidator()
         try:
-            check=shorturl.objects.get(short_query=query)
-            check.visits=check.visits+1
-            check.save()
-            url_to_redirect=check.original_url
-            validate = URLValidator()
-            try:
-                validate(url_to_redirect)
-                return redirect(url_to_redirect)
-            except:
-                return render(request, 'event.html')
-        except shorturl.DoesNotExist:
-            print('here')
-            return render(request, "dashboard.html", {'error':"error"})
+            validate(url_to_redirect)
+            return redirect(url_to_redirect)
+        except:
+            return render(request, 'event.html')
+    except shorturl.DoesNotExist:
+        return render(request, 'error.html')
 
 def randomgen():
     return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(6))
