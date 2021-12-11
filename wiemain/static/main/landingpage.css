@@ -1,0 +1,232 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  margin:0;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+
+
+
+.header {
+  position:relative;
+  text-align:center;
+background: linear-gradient(to top right, #d797d8 42%, #fea8ff 68%);
+  color:white;
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height:45vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:20vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% {
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+.bgfoot{
+ background-color: rgb(80, 81, 82);
+text-align: center;
+}
+/* Use prefix foot-* */
+.foot-wrapper {
+  margin-top: 2em;
+  background: #424242;
+  color: white;
+}
+.foot-wrapper a {
+  color: white;
+  text-decoration: underline;
+}
+.foot-wrapper a:hover, .foot-wrapper a:visited, .foot-wrapper a:active {
+  color: white;
+}
+.foot-wrapper .foot-heading {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.foot-wrapper .foot-heading h3 {
+  color: white;
+}
+.foot-wrapper .foot-address {
+  padding-bottom: 2em;
+}
+.foot-wrapper .foot-address iframe {
+  width: 100%;
+  height: 100%;
+}
+.foot-wrapper .foot-address p {
+  margin-bottom: 0.5rem;
+}
+.foot-wrapper .foot-address h4 {
+  margin-bottom: 0em;
+  margin-top: 1em;
+}
+.foot-credits {
+  color: white;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  max-width: 100%;
+}
+.foot-credits p {
+  margin-bottom: 0;
+  padding: 0.5em 0;
+}
+.foot-credits a {
+  color: white;
+  text-decoration: underline;
+}
+.foot-credits a:hover, .foot-credits a:visited, .foot-credits a:active {
+  color: white;
+}
+/* End of footer.html */
+.card {
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+  border: 1;
+  border-radius: 1rem;
+}
+
+.img-hover-zoom--colorize img {
+  border-radius: 50%;
+  width: 150px;
+  height: auto;
+  margin-top: 20px;
+  padding: 1px;
+  transition: transform .5s;
+  filter: grayscale(100%);
+}
+
+.img-hover-zoom--colorize:hover img {
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+
+.card h5 {
+  overflow: hidden;
+  height: 80px;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.card h5 a {
+  color: black;
+  text-decoration: none;
+}
+
+.role {
+  color: #7a7a7a;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab {
+  font-size: 1.5rem;
+  color: darkgray;
+  transition: transform .5s;
+}
+
+.fab:hover {
+  color: black;
+  transform: scale(1.1);
+}
+
+.card h2 {
+  font-size: 1rem;
+}
+
+
+/* MEDIA */
+
+@media only screen and (min-width: 1200px) {
+  .img-hover-zoom--colorize img {
+      width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .h1,
+  h1 {
+      font-size: 2rem;
+  }
+}
