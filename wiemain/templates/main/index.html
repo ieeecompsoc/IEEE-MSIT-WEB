@@ -1,0 +1,616 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>IEEE WIE MSIT</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+
+	<!-- Font Awesome if you need it -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'main/landingpage.css'%}">
+	<!--Replace with your tailwind.css once created-->
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+
+	<!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+	<style>
+		.gradient {
+			background: linear-gradient(117deg, rgb(245, 150, 245) 27%, rgb(152, 226, 255) 53%);
+		}
+
+		#message {
+			background-color: #00CC66;
+			padding: 15px;
+			text-align: center;
+			border: solid 1px green;
+
+		}
+
+		#sahayika {
+			font-family: 'Damion', cursive;
+		}
+		.bgfoot{
+			align-items: center;
+			background-color: rgba(252,231,243,255);
+			color: black;
+		}
+		.mainimg{
+			display: block; text-align: center; width: 38vw;
+		}
+		/* Use prefix foot-* */
+ .foot-wrapper {
+	 margin-top: 2em;
+	 background: #424242;
+	 color: white;
+}
+ .foot-wrapper a {
+	 color: white;
+	 text-decoration: underline;
+}
+ .foot-wrapper a:hover, .foot-wrapper a:visited, .foot-wrapper a:active {
+	 color: white;
+}
+ .foot-wrapper .foot-heading {
+	 text-align: center;
+	 margin-bottom: 1em;
+}
+ .foot-wrapper .foot-heading h3 {
+	 color: white;
+}
+ .foot-wrapper .foot-address {
+	 padding-bottom: 2em;
+}
+ .foot-wrapper .foot-address iframe {
+	 width: 100%;
+	 height: 100%;
+}
+ .foot-wrapper .foot-address p {
+	 margin-bottom: 0.5rem;
+}
+ .foot-wrapper .foot-address h4 {
+	 margin-bottom: 0em;
+	 margin-top: 1em;
+}
+ .foot-credits {
+	 color: white;
+	 justify-content: center;
+	 text-align: center;
+	 background-color: black;
+	 max-width: 100%;
+}
+ .foot-credits p {
+	 margin-bottom: 0;
+	 padding: 0.5em 0;
+}
+ .foot-credits a {
+	 color: white;
+	 text-decoration: underline;
+}
+ .foot-credits a:hover, .foot-credits a:visited, .foot-credits a:active {
+	 color: white;
+}
+/* End of footer.html */
+#nav-content,#header{
+	background-color:rgb(245, 150, 245);
+}
+#teamimg{
+	border-radius: 30%;
+ background-color: black;
+}
+#person-info{
+	color: black;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.wie{
+	font-family: 'Balsamiq Sans', cursive;
+}
+.ieee{
+	font-family: 'Balsamiq Sans', cursive;
+}
+	</style>
+
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+	<!--Nav-->
+	<nav id="header" class="fixed w-full top-0 text-white ">
+
+		<div class="w-full container mx-auto flex flex-wrap items-center mt-0 py-2">
+
+			<div class="pl-4 flex items-center">
+				<a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+					href="#">
+					IEEE WIE MSIT
+				</a>
+			</div>
+
+			<div class="block lg:hidden pl-4">
+				<button id="nav-toggle" class="flex items-center text-black text-orange-800 hover:text-gray-900">
+					<svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<title>Menu</title>
+						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+					</svg>
+				</button>
+			</div>
+
+			<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20"
+				id="nav-content">
+				<ul class="list-reset lg:flex justify-end flex-1 items-center">
+					<li class="mr-3">
+						<a class="inline-block py-2 px-4 text-white font-bold no-underline"
+							href="#">Home</a>
+					</li>
+					<li class="mr-3">
+						<a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+							href="#about">About</a>
+					</li>
+
+					</li>
+				<!-----	<li class="mr-3">
+						<a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+							href="#gallery">Gallery</a>
+				--->	</li>
+					<li class="mr-3">
+						<a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+							href="#team">Team</a>
+					</li>
+					<!-- <li class="mr-3">
+						<a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+							href="events">Events</a>
+					</li> -->
+					<li class="mr-3">
+						<a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+							href="#contact">Contact</a>
+					</li>
+				</ul>
+
+						</div>
+		</div>
+
+		<hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+	</nav>
+
+
+	<!-- Home -->
+	<div class="pt-24 md:pl-40">
+
+		{% if messages %}
+		{% for message in messages %}
+		<p id="message">{{message}}</p>
+		{% endfor %}
+
+		{% endif %}
+		<div class="fluid-container flex flex-wrap flex-col md:flex-row items-center">
+			<!--Left Col-->
+			<div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"
+				id="topheader">
+
+				<h1 class="my-3 text-3xl font-bold leading-tight wie">IEEE WOMEN IN ENGINEERING<br>SOCIETY MSIT</h1>
+				<p class="leading-normal text-2xl mb-8 ieee">women in STEM change the world</p>
+
+				<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+
+					<button id="homepagebtn"
+						class="mx-auto lg:mx-4 hover:underline bg-white text-gray-800 font-bold rounded-full mb-5  py-4 px-6 shadow-lg flex-col">
+						<a href="https://wie.ieee.org/membership/" target="_blank">Join Us</a>
+					</button>
+
+					<button id="homepagebtn"
+						class="mx-auto lg:mx-4 hover:underline bg-white text-gray-800 font-bold rounded-full mb-5  py-4 px-6 shadow-lg flex-col">
+						<a href="https://wie.ieee.org/membership/" target="_blank">Discover Scholarships</a>
+					</button>
+
+				</div>
+				<br>
+				<br>
+
+			</div>
+			<!--Right Col-->
+			<div class="w-full md:w-3/5 mainimg">
+				<img class="w-full md:w-3/5 z-50" src="{% static "images/wielogo-removebg-preview.png" %}">
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+	<!-- SVG -->
+	<div class="relative -mt-12 lg:-mt-24">
+		<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+			<defs>
+				<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+			</defs>
+			<g class="parallax">
+				<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+				<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+				<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+				<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+			</g>
+		</svg>
+	</div>
+
+
+	<!-- About Section -->
+	<section id="about" class="bg-white border-b py-8">
+		<div class="container max-w-5xl mx-auto m-8">
+			<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">About Us</h1>
+
+
+			<div class="flex flex-wrap">
+				<div class="w-5/6 sm:w-1/2 p-6">
+					<br /><br />
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Who are we?</h3>
+					<p class="text-gray-600 mb-8">IEEE Women in Engineering (WIE) is one of the largest international
+					 professional organizations dedicated to promoting women engineers and scientists, and
+					 inspiring girls
+					  around the world to follow their academic interests in a career in engineering. IEEE WIE envisions a vibrant community of
+					women and men collectively using their diverse talents to innovate for the benefit of humanity.
+
+
+					</p>
+
+				</div>
+				<div class="w-full sm:w-1/2 p-6">
+					<div class="w-full md:w-5/5 py-6 px-6 text-center">
+						<img class="w-full md:w-4/5 z-60"
+							src="{% static "images/wie2.png" %}">
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-wrap flex-col-reverse sm:flex-row">
+				<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="w-full md:w-5/5 py-6 px-6 text-center">
+						<img class="w-full md:w-4/5 z-50"
+							src="{% static "images/womeninstem.png" %}">
+					</div>
+				</div>
+				<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="align-middle">
+						<br /><br />
+						<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Our mission</h3>
+						<p class="text-gray-600 mb-8">To facilitate the recruitment and retention of women in technical disciplines globally.
+						Build a vibrant community of IEEE women and men collectively using their diverse talents to innovate for the benefit of humanity.
+					</div>
+				</div>
+
+			</div>
+
+
+
+		</div>
+	</section>
+
+
+	<!-- Gallery Section
+	<section class="bg-white border-b py-8" id="gallery">
+
+		<div class="container mx-auto flex flex-wrap pt-4 pb-12">
+
+			<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Gallery</h1>
+			<div class="w-full mb-4">
+				<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+			</div>
+
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+
+				<div class="flex-1 bg-pink-100 rounded-t rounded-b-none overflow-hidden shadow">
+					<div>
+						<img alt="..."
+						src="{% static "images/gateway.png" %}"
+							class="shadow-lg rounded max-w-full mx-auto" />
+					</div>
+				</div>
+			</div>
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+				<div class="flex-1 bg-pink-100 rounded-t rounded-b-none overflow-hidden shadow">
+					<div>
+						<img alt="..."
+						src="{% static "images/finance.png" %}"
+							class="shadow-lg rounded max-w-full mx-auto" />
+					</div>
+				</div>
+			</div>
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+				<div class="flex-1 bg-pink-100 rounded-t rounded-b-none overflow-hidden shadow">
+					<div>
+						<img alt="..."
+						src="{% static "images/webd.jpeg" %}"
+							class="shadow-lg rounded max-w-full mx-auto" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+-->
+
+
+	<section class="bg-white border-b py-8" id="team">
+
+		<div class="container mx-auto flex flex-wrap pt-4 pb-12">
+
+			<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Our Team</h1>
+
+
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+
+				<div class="flex-1 bg-pink-100 overflow-hidden shadow">
+					<div id="person-info">
+						<img alt="..."
+						src="{% static "images/ParasJain.jpg" %}"
+							class="shadow-lg rounded  mx-auto" id="teamimg"/>
+							Paras Jain
+							<p> Chair person </p>
+<a href="http://ieee.msit.in/uploads/execom/resume_1_-_Paras_Jain.pdf" class="fa fa-file"></a>
+<a href  = "mailto:paras.jain121.pj@gmail.com" class="fa fa-google"></a>
+<a href="https://www.linkedin.com/in/prsjn/" class="fa fa-linkedin"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+
+				<div class="flex-1 bg-pink-100 rounded-t rounded-b-none overflow-hidden shadow">
+					<div id="person-info">
+						<img alt="..."
+						src="{% static "images/riya.jpeg" %}"
+							class="shadow-lg rounded max-w-full mx-auto" id="teamimg"/>
+							Riya Gandhi
+							<p>Vice Chair person</p>
+<a href="http://ieee.msit.in/uploads/execom/Resume-Riya-Gandhi_4_-_Riya_Gandhi.pdf" class="fa fa-file"></a>
+<a href  = "mailto:riya090401@gmail.com" class="fa fa-google"></a>
+<a href="https://www.linkedin.com/in/riya-gandhi-8a1430190/" class="fa fa-linkedin"></a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+
+				<div class="flex-1 bg-pink-100 rounded-t rounded-b-none overflow-hidden shadow">
+					<div id="person-info">
+						<img alt="..."
+						src="{% static "images/ShubhaSharma.jpg" %}"
+							class="shadow-lg rounded max-w-full mx-auto" id="teamimg"/>
+							Shubha Sharma
+							<p>Webmaster</p>
+<a href="http://ieee.msit.in/uploads/execom/SHUBHA_SHARMA__RESUME_-_shubha_sharma.pdf" class="fa fa-file"></a>
+<a href  = "mailto:shubhasharma0208@gmail.com" class="fa fa-google"></a>
+<a href="https://www.linkedin.com/in/shubhasharma0208/" class="fa fa-linkedin"></a>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col">
+
+				<div class="flex-1 bg-pink-100 rounded-t rounded-b-none overflow-hidden shadow">
+					<div id="person-info">
+						<img alt="..."
+						src="{% static "images/MuskaanGupta.jpg" %}"
+							class="shadow-lg rounded max-w-full mx-auto" id="teamimg"/>
+							Muskaan Gupta
+							<p>Secretary</p>
+<a href="http://ieee.msit.in/uploads/execom/Muskaan_Gupta_resume_-_Muskaan_Gupta.pdf" class="fa fa-file"></a>
+<a href  = "mailto:muskaang929@gmail.com" class="fa fa-google"></a>
+<a href="https://www.linkedin.com/in/muskaan-gupta-79b16018a/" class="fa fa-linkedin"></a>
+					</div>
+				</div>
+			</div>
+			<div class="w-full md:w-1/3 p-6 flex flex-col">
+
+				<div class="flex-1 bg-pink-100 rounded-t rounded-b-none overflow-hidden shadow">
+					<div id="person-info">
+						<img alt="..."
+						src="{% static "images/SaumyaTaneja.jpg" %}"
+							class="shadow-lg rounded max-w-full mx-auto" id="teamimg"/>
+							Saumya Taneja
+							<p>Treasurer</p>
+
+<a href="http://ieee.msit.in/uploads/execom/SAUMYA_TANEJA.RESUME_-_Saumya_Taneja.docx" class="fa fa-file"></a>
+<a href  = "mailto:saumyataneja1973@gmail.com" class="fa fa-google"></a>
+<a href="https://www.linkedin.com/in/saumya-taneja-867625144/" class="fa fa-linkedin"></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</section>
+
+
+
+
+	<!--Footer-->
+	<section id="contact">
+	<footer class=" bgfoot">
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+			  <div class="col-10">
+				<div class="row foot-heading">
+				  <div class="col">
+					<h1 class="font-bold"><b>Contact</b></h1><br></br>
+				  </div>
+				</div>
+				<div class="row foot-address"  style="justify-content: center;display:flex;">
+					  <div class="col-lg-5 offset-lg-1 col-md-4 offset-md-1 col-sm-10 offset-sm-1 col-12 pl-8">
+						<h4>Email Us:</h4>
+						<p><a href="mailto:ieee@msit.in">msitwie@gmail.com</a></p>
+						<a href  = "mailto:msitwie@gmail.com" class="fa fa-google"></a>
+						<a href="https://www.linkedin.com/company/wie-msit" class="fa fa-linkedin"></a>
+						<br></br>
+						<h4>Address:</h4>
+						<p>Maharaja Surajmal Institute of Technology<br>
+						  C-4, Lal Sain Mandir Marg, Janak Puri, New Delhi, Delhi 110058</p>
+					  </div>
+
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <br></br>
+		  <div class="container-fluid foot-credits">
+			<div class="col">
+			  <p>Copyright &copy; <script>
+				  document.write(new Date().getFullYear())
+				</script>, IEEE WIE MSIT <br> Designed and Developed by shubha Sharma
+			</div>
+
+
+
+
+
+
+
+	</footer>
+</section>
+
+	<!-- jQuery if you need it
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  -->
+
+	<script>
+
+		var scrollpos = window.scrollY;
+		var header = document.getElementById("header");
+		var navcontent = document.getElementById("nav-content");
+		var navaction = document.getElementById("navAction");
+		var brandname = document.getElementById("brandname");
+		var toToggle = document.querySelectorAll(".toggleColour");
+
+		document.addEventListener('scroll', function () {
+
+			/*Apply classes for slide in bar*/
+			scrollpos = window.scrollY;
+
+			if (scrollpos > 10) {
+				header.classList.add("bg-white");
+				navaction.classList.remove("bg-white");
+				navaction.classList.add("gradient");
+				navaction.classList.remove("text-gray-800");
+				navaction.classList.add("text-white");
+				//Use to switch toggleColour colours
+				for (var i = 0; i < toToggle.length; i++) {
+					toToggle[i].classList.add("text-gray-800");
+					toToggle[i].classList.remove("text-white");
+				}
+				header.classList.add("shadow");
+				navcontent.classList.remove("bg-gray-100");
+				navcontent.classList.add("bg-white");
+			}
+			else {
+				header.classList.remove("bg-white");
+				navaction.classList.remove("gradient");
+				navaction.classList.add("bg-white");
+				navaction.classList.remove("text-white");
+				navaction.classList.add("text-gray-800");
+				//Use to switch toggleColour colours
+				for (var i = 0; i < toToggle.length; i++) {
+					toToggle[i].classList.add("text-white");
+					toToggle[i].classList.remove("text-gray-800");
+				}
+
+				header.classList.remove("shadow");
+				navcontent.classList.remove("bg-white");
+				navcontent.classList.add("bg-gray-100");
+
+			}
+
+		});
+
+
+	</script>
+
+	<script>
+
+
+		/*Toggle dropdown list*/
+		/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+		var navMenuDiv = document.getElementById("nav-content");
+		var navMenu = document.getElementById("nav-toggle");
+
+		document.onclick = check;
+		function check(e) {
+			var target = (e && e.target) || (event && event.srcElement);
+
+			//Nav Menu
+			if (!checkParent(target, navMenuDiv)) {
+				// click NOT on the menu
+				if (checkParent(target, navMenu)) {
+					// click on the link
+					if (navMenuDiv.classList.contains("hidden")) {
+						navMenuDiv.classList.remove("hidden");
+						navMenuDiv.classList.add("bg-red-200");
+					} else { navMenuDiv.classList.add("hidden"); }
+				} else {
+					// click both outside link and outside menu, hide menu
+					navMenuDiv.classList.add("hidden");
+				}
+			}
+
+		}
+		function checkParent(t, elm) {
+			while (t.parentNode) {
+				if (t == elm) { return true; }
+				t = t.parentNode;
+			}
+			return false;
+		}
+	</script>
+
+
+</body>
+
+</html>
