@@ -33,6 +33,8 @@ ALLOWED_HOSTS = ['localhost', '*', 'ieeemsit.a2hosted.com', '139.59.79.194']
 
 INSTALLED_APPS = [
     'web',
+    'wiemain',
+    'pes_msit',
     'attendance',
     'urlshortner',
     'crispy_forms',

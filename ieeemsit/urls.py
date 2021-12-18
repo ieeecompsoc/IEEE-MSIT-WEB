@@ -21,6 +21,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'', include('web.urls')),
+    path(r'wie/', include('wiemain.urls')),
+    path(r'pes/', include('pes_msit.urls')),
+
     path(r's/', include('urlshortner.urls')),
     path(r'ckeditor', include('ckeditor_uploader.urls')),
     path(r'attendancecompiler',include('attendance.urls')),
